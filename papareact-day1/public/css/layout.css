@@ -258,7 +258,7 @@ ul#nav li.current a { color: #F06000; }
    padding-bottom: 6px;
 }
 #resume h3 {
-   font: 25px/30px 'opensans-bold', sans-serif;
+   font: 25px/30px 'Poppins', sans-serif; font-weight: 700;
 }
 
 #resume .header-col { padding-top: 9px; }
@@ -281,7 +281,7 @@ ul#nav li.current a { color: #F06000; }
    margin-left: 5px;
 }
 #resume .date {
-   font: 15px/24px 'opensans-regular', sans-serif;
+   font: 15px/24px 'Poppins', sans-serif;
    margin-top: 6px;
 }
 
