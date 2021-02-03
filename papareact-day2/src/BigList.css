@@ -1,0 +1,16 @@
+.list.biglist {
+  background: #2c3e50;
+}
+
+.bigList_gradient {
+  background: linear-gradient(to bottom, #3A6979, #2c3e50) !important;
+}
+
+.list__trending.list__big {
+  flex: 0 0 100%;
+}
+
+.list__items-big>.list__item {
+  flex: 0 0 200px;
+  height: 300px;
+}
