@@ -1,0 +1,158 @@
+{
+  "main": {
+    "name": "Dash Santosh",
+    "occupation": "Front-end Developer, UI/UX Designer",
+    "description": "vb",
+    "image": "profilepic.jpg",
+    "bio": "Hi there! I am Sonny! You might also know me as PAPA React. I've been coding for over 10 years now. As a Full Stack developer I've worked both with startups and large corporations to help build & scale their companies. Along the journey I realised my passion existed in helping others excel and pursue their dreams as upcoming developers. With this passion, I have now trained thousand's of developers across the globe. Through live coaching sessions on Youtube, I have accumulated several MILLION views demonstrating how to apply developer skills in a range of cool builds and challenges. I deliver REAL VALUE by teaching REAL WORLD projects to help students enter the world of web development. You’ll get hands-on experience and learn the skills that are required to succeed in the real-world in this community.",
+    "contactmessage": "Get in touch with me to be a part of the PAPA fam!",
+    "email": "santdas36@gmail.com",
+    "phone": "+91 7867943737",
+    "address": {
+      "street": "22 Ram Street",
+      "city": "Salem",
+      "state": "India",
+      "zip": "636008"
+    },
+    "website": "https://dashsantosh.ga",
+    "resumedownload": "https://dashsantosh.ga",
+    "social": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/santdas36",
+        "className": "fa fa-facebook"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/santdas36",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "instagram",
+        "url": "https://www.instagram.com/santdas36",
+        "className": "fa fa-instagram"
+      },
+      {
+        "name": "dribbble",
+        "url": "https://www.dribbble.com/santdas36",
+        "className": "fa fa-dribbble"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/santdas36",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "My Programming Language Proficiency",
+    "education": [
+      {
+        "school": "University of Kent - UK",
+        "degree": "Bachelor's Degree, Computer Science",
+        "graduated": "July 2016",
+        "description": "Graduated with First Class Honours"
+      }
+    ],
+    "work": [
+      {
+        "company": "PAPA",
+        "title": "Founder and CEO",
+        "years": "May 2019 - Present",
+        "description": "Cloning all the apps possible. On the way to clone the world! Building the PAPA Fam as large as possible."
+      }
+    ],
+    "skills": [
+      {
+        "name": "ReactJs",
+        "level": "100%"
+      },
+      {
+        "name": "Python",
+        "level": "90%"
+      },
+      {
+        "name": "Git",
+        "level": "90%"
+      },
+      {
+        "name": "JavaScript",
+        "level": "99%"
+      },
+      {
+        "name": "Web Development",
+        "level": "95%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "Amazon Redesign",
+        "category": "",
+        "image": "amazon.webp",
+        "url": "https://amazon-ish.vercel.app"
+      },
+      {
+        "title": "Spotify Clone",
+        "category": "",
+        "image": "spotify.webp",
+        "url": "https://spotify-ish.vercel.app"
+      },
+      {
+        "title": "Google darkmode",
+        "category": "",
+        "image": "google.webp",
+        "url": "/"
+      },
+      {
+        "title": "Gradients",
+        "category": "",
+        "image": "gradients.webp",
+        "url": "/"
+      },
+      {
+        "title": "nxtlvl",
+        "category": "",
+        "image": "nxtlvl.webp",
+        "url": "/"
+      },
+      {
+        "title": "vp404",
+        "category": "",
+        "image": "vp404.webp",
+        "url": "/"
+      },
+      {
+        "title": "zeyes",
+        "category": "",
+        "image": "zeyes.webp",
+        "url": "/"
+      },
+      {
+        "title": "Gradients",
+        "category": "",
+        "image": "gradients.webp",
+        "url": "/"
+      },
+      {
+        "title": "TMDb App",
+        "category": "",
+        "image": "tmdb.webp",
+        "url": "https://tmdb-ish.vercel.app"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "Sonny is absolutely excellent, his depth of knowledge & his mentorship really meant a lot to us... I would definitely recommend",
+        "user": "Jorge Fouto"
+      },
+      {
+        "text": "Learning with Sonny has been AWESOME, he makes learning React so easy and approachable, you'll finally feel like you know what's going on!",
+        "user": "Adam Curtis"
+      }
+    ]
+  }
+}
