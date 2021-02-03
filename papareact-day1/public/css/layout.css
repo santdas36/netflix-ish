@@ -58,7 +58,8 @@ header .banner {
 
 header .banner-text { width: 100%; }
 header .banner-text h1 {
-   font: 90px/1.1em 'opensans-bold', sans-serif;
+   font: 90px/1.1em 'Poppins', sans-serif;
+   font-weight: 700;
    color: #fff;
    letter-spacing: -2px;
    margin: 0 auto 18px auto;
@@ -130,7 +131,8 @@ header .scrolldown a:hover { color: #11ABB0; }
 
 /* nav-wrap */
 #nav-wrap {
-   font: 12px 'opensans-bold', sans-serif;
+   font: 12px 'Poppins', sans-serif;
+   font-weight: 700;
    width: 100%;
    text-transform: uppercase;
    letter-spacing: 2.5px;
@@ -246,7 +248,8 @@ ul#nav li.current a { color: #F06000; }
 #resume a:hover, #resume a:focus { color: #313131; }
 
 #resume h1 {
-   font: 18px/24px 'opensans-bold', sans-serif;
+   font: 18px/24px 'Poppins', sans-serif;
+   font-weight: 700;
    text-transform: uppercase;
    letter-spacing: 1px;
 }
@@ -267,7 +270,8 @@ ul#nav li.current a { color: #F06000; }
    border-bottom: 1px solid #E8E8E8;
 }
 #resume .info {
-   font: 16px/24px 'librebaskerville-italic', serif;
+   font: 16px/24px 'Zilla Slab', serif;
+   font-style: italic;
    color: #6E7881;
    margin-bottom: 18px;
    margin-top: 9px;
@@ -303,7 +307,8 @@ ul#nav li.current a { color: #F06000; }
   	border-radius: 3px;
 }
 .bars li em {
-	font: 15px 'opensans-bold', sans-serif;
+	font: 15px 'Poppins', sans-serif;
+    font-weight: 700;
    color: #313131;
 	text-transform: uppercase;
    letter-spacing: 2px;
@@ -422,7 +427,8 @@ ul#nav li.current a { color: #F06000; }
    padding-bottom: 60px;
 }
 #portfolio h1 {
-   font: 15px/24px 'opensans-semibold', sans-serif;
+   font: 15px/24px 'Poppins', sans-serif;
+   font-weight: 600;
    text-transform: uppercase;
    letter-spacing: 1px;
    text-align: center;
@@ -496,7 +502,8 @@ ul#nav li.current a { color: #F06000; }
 }
 .portfolio-item .portfolio-item-meta { padding: 18px }
 .portfolio-item .portfolio-item-meta h5 {
-   font: 14px/21px 'opensans-bold', sans-serif;
+   font: 14px/21px 'Poppins', sans-serif;
+   font-weight: 700;
    color: #fff;
 }
 .portfolio-item .portfolio-item-meta p {
@@ -526,7 +533,8 @@ ul#nav li.current a { color: #F06000; }
 }
 .popup-modal .description-box { padding: 12px 36px 18px 36px; }
 .popup-modal .description-box h4 {
-   font: 15px/24px 'opensans-bold', sans-serif;
+   font: 15px/24px 'Poppins', sans-serif;
+   font-weight: 700;
 	margin-bottom: 12px;
    color: #111;
 }
@@ -536,7 +544,8 @@ ul#nav li.current a { color: #F06000; }
    margin-bottom: 12px;
 }
 .popup-modal .description-box .categories {
-   font: 11px/21px 'opensans-light', sans-serif;
+   font: 11px/21px 'Poppins', sans-serif;
+   font-weight: 300;
    color: #A1A1A1;
    text-transform: uppercase;
    letter-spacing: 2px;
@@ -593,7 +602,8 @@ ul#nav li.current a { color: #F06000; }
    padding-bottom: 48px;
 }
 #call-to-action h1 {
-   font: 18px/24px 'opensans-bold', sans-serif;
+   font: 18px/24px 'Poppins', sans-serif;
+   font-weight: 700;
    text-transform: uppercase;
    letter-spacing: 3px;
    color: #fff;
@@ -613,7 +623,8 @@ ul#nav li.current a { color: #F06000; }
    margin-top: 12px;
 }
 #call-to-action h2 {
-   font: 28px/36px 'opensans-bold', sans-serif;
+   font: 28px/36px 'Poppins', sans-serif;
+   font-weight: 700;
    color: #EBEEEE;
    margin-bottom: 6px;
 }
@@ -636,7 +647,8 @@ call-to-action .button {
    color: #0D0D0D;
 }
 #call-to-action p span {
-	font-family: 'opensans-semibold', sans-serif;
+	font-family: 'Poppins', sans-serif;
+   font-weight: 600;
 	color: #D8D8D8;
 }
 
@@ -687,7 +699,8 @@ call-to-action .button {
 }
 #testimonials blockquote:before { content: none; }
 #testimonials blockquote p {
-   font-family: 'librebaskerville-italic', serif;
+   font-family: 'Zilla Slab', serif;
+   font-style: italic;
    padding: 0;
    font-size: 24px;
    line-height: 48px;
@@ -805,7 +818,8 @@ call-to-action .button {
 #contact a:hover, #contact a:focus { color: #fff; }
 
 #contact h1 {
-   font: 18px/24px 'opensans-bold', sans-serif;
+   font: 18px/24px 'Poppins', sans-serif;
+   font-weight: 700;
    text-transform: uppercase;
    letter-spacing: 3px;
    color: #EBEEEE;
@@ -824,12 +838,14 @@ call-to-action .button {
 }
 
 #contact h4 {
-   font: 16px/24px 'opensans-bold', sans-serif;
+   font: 16px/24px 'Poppins', sans-serif;
+font-weight: 700;
    color: #EBEEEE;
    margin-bottom: 6px;
 }
 #contact p.lead {
-   font: 18px/36px 'opensans-light', sans-serif;
+   font: 18px/36px 'Poppins', sans-serif;
+font-weight: 300;
    padding-right: 3%;
 }
 #contact .header-col { padding-top: 6px; }
@@ -838,7 +854,8 @@ call-to-action .button {
 /* contact form */
 #contact form { margin-bottom: 30px; }
 #contact label {
-   font: 15px/24px 'opensans-bold', sans-serif;
+   font: 15px/24px 'Poppins', sans-serif;
+font-weight: 700;
    margin: 12px 0;
    color: #EBEEEE;
 	display: inline-block;
@@ -920,7 +937,7 @@ call-to-action .button {
    display: block;
 }
 #twitter li b a {
-   font: 13px/36px 'opensans-regular', Sans-serif;
+   font: 13px/36px 'Poppins', Sans-serif;
    color: #474747 !important;
    border: none;
 }
@@ -1009,3 +1026,6 @@ footer .social-links li:first-child { margin-left: 0; }
  	border-radius: 100%;
 }
 #go-top a:hover { background-color: #0F9095; }
+: #0F9095; }
+ #0F9095; }
+0F9095; }

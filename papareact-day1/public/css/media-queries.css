@@ -14,7 +14,8 @@
     /* header styles
    ------------------------------------------------------------------ */
    header .banner-text h1 {
-      font: 80px/1.1em 'opensans-bold', sans-serif;
+      font: 80px/1.1em 'Poppins', sans-serif;
+font-weight: 700;
       letter-spacing: -1px;
       margin: 0 auto 12px auto;
    }
@@ -29,11 +30,11 @@
    ------------------------------------------------------------------ */
    header .banner { padding-bottom: 12px; }
    header .banner-text h1 {
-      font: 78px/1.1em 'opensans-bold', sans-serif;
+      font: 78px/1.1em 'Poppins', sans-serif; font-weight: 700;
       letter-spacing: -1px;      
    }
    header .banner-text h3 {
-      font: 17px/1.9em 'librebaskerville-regular', serif;
+      font: 17px/1.9em 'Zilla Slab', serif;
       width: 80%;
    }
    header .banner-text hr {
@@ -42,7 +43,8 @@
    }
    /* nav-wrap */
    #nav-wrap {
-      font: 11px 'opensans-bold', sans-serif;
+      font: 11px 'Poppins', sans-serif;
+font-weight: 700;
       letter-spacing: 1.5px;
    }
 
@@ -59,7 +61,7 @@
 
    /* Resume Section
    ------------------------------------------------------------------- */
-   #resume h1 { font: 16px/24px 'opensans-bold', sans-serif; }
+   #resume h1 { font: 16px/24px 'Poppins', sans-serif; font-weight: 700;}
    #resume .main-col { padding-right: 5%; }   
 
    /* Testimonials Section
@@ -87,7 +89,7 @@
       font-size: 66px;
       line-height: 66px;
    }
-   #contact .section-head p.lead { font: 17px/33px opensans-light, sans-serif; }
+   #contact .section-head p.lead { font: 17px/33px 'Poppins', sans-serif; font-weight: 300;}
 
 
 }
@@ -100,7 +102,7 @@
    /* mobile navigation
    -------------------------------------------------------------------- */
    #nav-wrap {
-      font: 12px 'opensans-bold', sans-serif;
+      font: 12px 'Poppins', sans-serif;font-weight: 700;
       background: transparent !important;
       letter-spacing: 1.5px;  
       width: auto;
@@ -191,9 +193,9 @@
       padding-bottom: 12px;
       padding-top: 6px;
    }
-   header .banner-text h1 { font: 68px/1.1em 'opensans-bold', sans-serif; }
+   header .banner-text h1 { font: 68px/1.1em 'Poppins', sans-serif; font-weight: 700;}
    header .banner-text h3 {
-      font: 16px/1.9em 'librebaskerville-regular', serif;
+      font: 16px/1.9em 'Zilla Slab', serif;
       width: 85%;
    }
    header .banner-text hr {
@@ -242,7 +244,7 @@
    /* ----------------------------------------------------------------- */
    #call-to-action { text-align: center; }
    #call-to-action h1 {
-      font: 16px/24px 'opensans-bold', sans-serif;
+      font: 16px/24px 'Poppins', sans-serif; font-weight: 700;
       text-align: center;
       margin-bottom: 30px;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
@@ -262,7 +264,7 @@
    ----------------------------------------------------------------------- */
    #testimonials .text-container { text-align: center; }
    #testimonials h1 {
-      font: 16px/24px 'opensans-bold', sans-serif;
+      font: 16px/24px 'Poppins', sans-serif; font-weight: 700;
       text-align: center;
       margin-bottom: 30px;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
@@ -287,7 +289,7 @@
    #contact { padding-bottom: 66px; }
    #contact .section-head { margin-bottom: 12px; }
    #contact .section-head h1 {
-      font: 16px/24px 'opensans-bold', sans-serif;            
+      font: 16px/24px 'poppins', sans-serif; font-weight: 700;
       text-align: center;   
       margin-bottom: 30px;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
@@ -351,11 +353,11 @@
    -------------------------------------------------------------------- */
    header .banner { padding-top: 24px; }
    header .banner-text h1 {
-      font: 40px/1.1em 'opensans-bold', sans-serif;      
+      font: 40px/1.1em 'Poppins', sans-serif;  font-weight: 700;    
       margin: 0 auto 24px auto;
    }
    header .banner-text h3 {
-      font: 14px/1.9em 'librebaskerville-regular', sans-serif;
+      font: 14px/1.9em 'Zilla Slab', sans-serif;
       width: 90%;
    }
   
@@ -371,6 +373,7 @@
    footer .social-links li { margin-left: 14px; }   
 
 }
+
 
 
 
