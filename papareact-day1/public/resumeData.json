@@ -1,11 +1,11 @@
 {
   "main": {
     "name": "Dash Santosh",
-    "occupation": "Front-end Developer, UI/UX Designer",
-    "description": "vb",
+    "occupation": "Student",
+    "description": "I'm a Front-end Developer and UI/UX Designer",
     "image": "profilepic.jpg",
-    "bio": "Hi there! I am Sonny! You might also know me as PAPA React. I've been coding for over 10 years now. As a Full Stack developer I've worked both with startups and large corporations to help build & scale their companies. Along the journey I realised my passion existed in helping others excel and pursue their dreams as upcoming developers. With this passion, I have now trained thousand's of developers across the globe. Through live coaching sessions on Youtube, I have accumulated several MILLION views demonstrating how to apply developer skills in a range of cool builds and challenges. I deliver REAL VALUE by teaching REAL WORLD projects to help students enter the world of web development. You’ll get hands-on experience and learn the skills that are required to succeed in the real-world in this community.",
-    "contactmessage": "Get in touch with me to be a part of the PAPA fam!",
+    "bio": "Hi there! I am Dash. I'm a front-end developer aspiring to become a Full stack developer. I am currently proficient in React.Js and studying node.js too.",
+    "contactmessage": "Get in touch with me!",
     "email": "santdas36@gmail.com",
     "phone": "+91 7867943737",
     "address": {
@@ -48,18 +48,18 @@
     "skillmessage": "My Programming Language Proficiency",
     "education": [
       {
-        "school": "University of Kent - UK",
-        "degree": "Bachelor's Degree, Computer Science",
-        "graduated": "July 2016",
-        "description": "Graduated with First Class Honours"
+        "school": "Govt. College of Engineering, Salem",
+        "degree": "Bachelor's Degree, Electronics and Communication Engg.",
+        "graduated": "April 2023",
+        "description": "Currently studying..."
       }
     ],
     "work": [
       {
-        "company": "PAPA",
-        "title": "Founder and CEO",
-        "years": "May 2019 - Present",
-        "description": "Cloning all the apps possible. On the way to clone the world! Building the PAPA Fam as large as possible."
+        "company": "Freelancer",
+        "title": "Frontend Developer",
+        "years": "January 2017 - Present",
+        "description": "Helping clients expand and evolve in the world of internet with modern web technologies."
       }
     ],
     "skills": [
@@ -127,12 +127,6 @@
         "title": "zeyes",
         "category": "",
         "image": "zeyes.webp",
-        "url": "/"
-      },
-      {
-        "title": "Gradients",
-        "category": "",
-        "image": "gradients.webp",
         "url": "/"
       },
       {
