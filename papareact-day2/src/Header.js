@@ -63,7 +63,7 @@ function Header({ setSearchResult, setLoading, popularVisible, resetApp }) {
   }
 
   return (
-    <div className="app__header" style={location.pathname === "/" ? {backgroundColor: '#4ca1af'} : {}}>
+    <div className="app__header">
 			<ul className="app__nav">
 				{(!popularVisible || location.pathname !== '/') && <li className="app__back mobile" onClick={goBack}><ChevronLeftRoundedIcon style={{ fontSize: 24 }} /></li>}
 				<li className={`app__search mobile ${(searchOpen || input) ? "open" : ""}`} onClick={searchClick}>
