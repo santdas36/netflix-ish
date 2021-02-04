@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from "react";
 import "./Login.css";
 import {auth} from './firebase';
-import {useHistory} from 'react-router-dom';
+import {useHistory, useLocation} from 'react-router-dom';
 
 function Login() {
 	
 	const history = useHistory();
+	const location = useLocation();
 	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
+	const [email, setEmail] = useState(location.state.email);
 	const [password, setPassword] = useState('');
 	const [signup, setSignup] = useState(false);
 	const [loading, setLoading] = useState(false);
