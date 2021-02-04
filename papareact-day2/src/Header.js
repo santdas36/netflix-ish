@@ -5,12 +5,17 @@ import "./Header.css";
 import axios from './axios';
 import requests, { imageBase, fetchMovie, fetchTV, fetchSearchString, setLoading } from './api';
 import NFLogo from './assets/logo.png';
+import UserIcon from './assets/nfuser.jpg';
+import {auth} from './firebase';
+import {useHistory, useLocation} from 'react-router-dom';
 
 function Header({ setSearchResult, setLoading, popularVisible }) {
   const [input, setInput] = useState('');
   const inputEl = useRef(null);
   const searchEl = useRef(null);
   const [searchOpen, setSearchOpen] = useState(false);
+  const history = useHistory();
+  const location = useLocation();
 
   const errorOccurred = (error) => {
 	setLoading(false);
@@ -39,6 +44,14 @@ function Header({ setSearchResult, setLoading, popularVisible }) {
     setTimeout(() => setInput(''), 100);
   }
 
+  const handleUser = () => {
+  	if (auth.currentUser) {
+  		history.push('/profile');
+  	} else {
+  		history.push('/login');
+  	}
+  }
+  
   const searchClick = () => {
     setSearchOpen(true);
     setTimeout(() => { inputEl.current.focus() }, 300);
@@ -47,7 +60,7 @@ function Header({ setSearchResult, setLoading, popularVisible }) {
   return (
     <div className="app__header">
 			<ul className="app__nav">
-				{!popularVisible && <li className="app__back mobile" onClick={() => window.location.reload()}><ChevronLeftRoundedIcon style={{ fontSize: 24 }} /></li>}
+				{(!popularVisible || location.pathname !== '/') && <li className="app__back mobile" onClick={() => window.location.reload()}><ChevronLeftRoundedIcon style={{ fontSize: 24 }} /></li>}
 				<li className={`app__search mobile ${(searchOpen || input) ? "open" : ""}`} onClick={searchClick}>
 					<SearchRoundedIcon style={{ fontSize: 20 }} className="app__searchIcon" onClick={searchClick} />
 					<form>
@@ -60,7 +73,11 @@ function Header({ setSearchResult, setLoading, popularVisible }) {
 				<li><a href="#">Series</a></li>
 				<li><a href="#">Featured</a></li>
 			</ul>
-			<img className="app__title" src={NFLogo}/>
+			<div className="app__user">
+				<img src={auth.currentUser.photoURL || UserIcon} onClick={handleUser} />
+				<span>{auth.currentUser.email || 'Login'}</span>
+			</div>
+			<img className="app__title" src={NFLogo} onClick={()=>history.push('/')}/>
 		</div>
   )
 }

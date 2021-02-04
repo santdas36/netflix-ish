@@ -1,0 +1,20 @@
+.login {
+width: 100%;
+min-height: 100vh;
+padding: 3rem;
+background: #2c3e50;
+margin-top: -6rem;
+position: relative;
+}
+.login::before {
+position: absolute;
+content: '';
+background-image: url(./assets/nfbg.jpg);
+background-size: cover;
+mix-blend-mode: overlay;
+-webkit-mask-image: radial-gradient(ellipse farthest-side at 50% 50%, #2c3e50, rgba(0,0,0,0.1));
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+}

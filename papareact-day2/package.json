@@ -8,6 +8,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "axios": "^0.20.0",
     "numeral": "^2.0.6",
+    "firebase": "^8.2.3",
     "react-modal-video": "^1.2.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

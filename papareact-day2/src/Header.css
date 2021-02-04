@@ -4,7 +4,27 @@
 	justify-content: space-between;
 	padding: 2rem 3rem;
 	background: #4ca1af;
+z-index: 10;
+position: relative;
 }
+
+.app__user {
+margin-left: 2rem;
+margin-right: 0;
+height: 2.25rem;
+border-radius: 10px;
+background: #2c3e50;
+padding: 0.125rem;
+}
+.app__user img {
+width: 2rem;
+border-radius: 10px;
+z-index: 2;
+}
+.app__user span {
+margin: 0 0.75rem 0 0.5rem;
+}
+
 
 .app__nav {
 	display: flex;
@@ -57,6 +77,7 @@
 	height: 1.5rem;
 	width: auto;
 	margin: 0;
+	margin-left: auto;
 }
 
 form button {

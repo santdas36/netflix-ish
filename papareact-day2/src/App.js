@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import FeaturedMovie from "./FeaturedMovie";
+import { Route, Redirect, useHistory } from "react-router-dom";
 import List from "./List";
 import BigList from "./BigList";
 import Results from "./Results";
@@ -150,16 +151,29 @@ function App() {
   return (
     <div className="app">
 		{loading && <Loading />}
+		
 		<Header setLoading={setLoading} popularVisible={popularVisible} setSearchResult={setSearchResult} />
 
-		{showResults ?
-		<Results setLoading={setLoading} searchResult={searchResult} setMovieId={setMovieId} /> : 
-		<FeaturedMovie featuredCertification={featuredCertification} overlayStyle={overlayStyle} title={featTitle} featuredMovie={featuredMovie} videoId={videoId} setTruncLine={setTruncLine} truncLine={truncLine} />}
+		<Route path='/login'>
+			<Login/>
+		</Route>
+		
+		<Route path='/profile'>
+			<Profile/>
+		</Route>
+		
+		<Route exact path='/'>
+			<>
+			{showResults ?
+				<Results setLoading={setLoading} searchResult={searchResult} setMovieId={setMovieId} /> : 
+				<FeaturedMovie featuredCertification={featuredCertification} overlayStyle={overlayStyle} title={featTitle} featuredMovie={featuredMovie} videoId={videoId} setTruncLine={setTruncLine} truncLine={truncLine} />}
 
-		{popularVisible && <List setLoading={setLoading} setMovieId={setMovieId} />}
-		<BigList notGradient={popularVisible} setLoading={setLoading} setMovieId={setMovieId} type={listOne.type} title={listOne.title} fetchId={listOne.fetchId}/>
-		<BigList notGradient={true} setLoading={setLoading} setMovieId={setMovieId} type={listTwo.type} title={listTwo.title} fetchId={listTwo.fetchId}/>
-
+			{popularVisible && <List setLoading={setLoading} setMovieId={setMovieId} />}
+				<BigList notGradient={popularVisible} setLoading={setLoading} setMovieId={setMovieId} type={listOne.type} title={listOne.title} fetchId={listOne.fetchId}/>
+				<BigList notGradient={true} setLoading={setLoading} setMovieId={setMovieId} type={listTwo.type} title={listTwo.title} fetchId={listTwo.fetchId}/>
+			</>
+		</Route>
+		
 		<Footer />
 
     </div>
