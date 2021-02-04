@@ -80,7 +80,7 @@ function Header({ setSearchResult, setLoading, popularVisible, resetApp }) {
 			</ul>
 			<div className="app__user" onClick={handleUser}>
 				<img src={auth.currentUser?.photoURL || UserIcon} />
-				<span>{auth.currentUser?.email || 'Login'}</span>
+				<span>{auth.currentUser?.displayName || auth.currentUser?.email || 'Login'}</span>
 			</div>
 			<img className="app__title" src={NFLogo} onClick={()=>history.push('/')}/>
 		</div>

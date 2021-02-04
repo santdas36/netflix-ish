@@ -1,0 +1,83 @@
+.profile {
+width: 100%;
+min-height: 100vh;
+padding: 3rem;
+background: #2c3e50;
+margin-top: -6rem;
+position: relative;
+z-index: 1;
+padding-top: 6rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.profile__header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 3rem;
+width: 100%;
+max-width: 720px;
+}
+.profile__header img {
+width: 4rem;
+border-radius: 6rem;
+}
+.profile__header h1 {
+font-size: 1.5rem;
+font-weight: 400;
+font-family: 'Work Sans';
+margin: 0;
+line-height: 1;
+margin-right: auto;
+margin-left: 1.5rem;
+}
+.profile h3 {
+margin: 3rem 0;
+text-align: center;
+}
+.packs {
+display: flex;
+flex-direction: row wrap;
+gap: 1rem;
+}
+.packs .pack {
+background: white;
+border-radius: 0.5rem;
+flex: 0.25;
+color: #2c3e50;
+padding: 1rem;
+text-align: center;
+display: flex;
+flex-flow: column;
+max-width: 240px;
+}
+.pack h3 {
+font-size: 1.2rem;
+margin: 1.5rem 0;
+}
+.pack .desc {
+width: 100%;
+margin-bottom: 3rem;
+}
+.pack .price {
+margin-top: auto;
+font-weight: 700;
+font-size: 1.15rem;
+}
+
+.profile button {
+font-family: "Mulish";
+font-weight: 700;
+background: #4ca1af;
+border-radius: 0.5rem;
+padding: 0.6rem 0.75rem;
+border: 1px rgba(255,255,255,0.15) solid;
+color: #fff;
+transition: all 0.2s;
+}
+.profile button.signout {
+background: #ec215f;
+padding: 0.6rem 1.5rem;
+}
