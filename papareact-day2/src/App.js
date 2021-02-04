@@ -46,6 +46,14 @@ function App() {
 	console.log(error.message);
   }
 
+  const resetApp = () => {
+  	setLoading(true);
+  	setFirstRun(true);
+  	setListOne(listOneInit);
+  	setListTwo(listTwoInit);
+  	initRun();
+  }
+  
   const getMovieInfo = async (movieInfo) => {
     axios.get(fetchMovie(movieInfo)).then((response) => {
       setFeaturedMovie(response.data);
@@ -156,7 +164,7 @@ function App() {
     <div className="app">
 		{loading && <Loading />}
 		
-		<Header setFirstRun={setFirstRun} setLoading={setLoading} popularVisible={popularVisible} setSearchResult={setSearchResult} initRun={initRun} />
+		<Header setLoading={setLoading} resetApp={resetApp} popularVisible={popularVisible} setSearchResult={setSearchResult} />
 
 		<Route path='/login'>
 			<Login/>
