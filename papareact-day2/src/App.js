@@ -189,7 +189,7 @@ function App() {
 		</Route>
 		
 		<Route path='/profile'>
-			{user ? <Profile/> : <Redirect to="/login" />}
+			{user ? <Profile user={user}/> : <Redirect to="/login" />}
 		</Route>
 		
 		<Route exact path='/'>
