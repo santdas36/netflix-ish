@@ -35,7 +35,7 @@ function Login() {
 			</div>
 			<button style={signup ? {backgroundColor: '#ec215f'} : {backgroundColor: '#3cb19f'}} disabled={loading}>{loading ? (signup ? 'Signing up...' : 'Logging In...') : (signup ? 'Create Account' : 'Log In')}</button>
 			<button className="google">Sign In with Google</button>
-			<p><span>New to Netflix? </span><b style={signup ? {color: '#3cb19f'} : {color: '#ec215f'}} onClick={()=>setSignup(true)}>Sign Up Now.</b></p>
+			<p><span>{signup ? 'Already have an account?' : 'New to Netflix?'}{' '}</span><b style={signup ? {color: '#3cb19f'} : {color: '#ec215f'}} onClick={()=>setSignup(!signup)}>Sign Up Now.</b></p>
 		</form>
     </div>
   )
