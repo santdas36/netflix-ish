@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Login.css";
 import {auth} from './firebase';
 
@@ -9,16 +9,40 @@ function Login() {
 	const [password, setPassword] = useState('');
 	const [signup, setSignup] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
+	
+	useEffect(()=> {
+		if (error) {
+			setTimeout(()=> {
+				setError(null);
+			}, 2000);
+		}
+	}, [error]);
 	
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setLoading(true);
+		setError(null);
+		if (signup) {
+			auth.createUserWithEmailAndPassword(email, password).then(() => {
+      		auth.currentUser.updateProfile({
+              		displayName: name,
+              		photoURL: `https://avatars.dicebear.com/4.5/api/gridy/${email}.svg`,
+            	});
+            }).catch((error) => {setError(error.message); setLoading(false)});
+		} else {
+			auth.signInWithEmailAndPassword(email, password).then(()=> {
+				setLoading(false);
+				history.push('/profile');
+			}).catch((error) => {setError(error.message); setLoading(false)});
+		}
 	}
 	
   return (
     <div className="login">
     	<form onSubmit={handleSubmit}>
 			<h3>{signup ? 'Sign Up' : 'Login'}</h3>
+			{error && <p className="error">{error}</p>}
 			{signup &&
 			<div className="input">
 				<label>Full Name</label>
@@ -35,7 +59,7 @@ function Login() {
 			</div>
 			<button style={signup ? {backgroundColor: '#ec215f'} : {backgroundColor: '#3cb19f'}} disabled={loading}>{loading ? (signup ? 'Signing up...' : 'Logging In...') : (signup ? 'Create Account' : 'Log In')}</button>
 			<button className="google">Sign In with Google</button>
-			<p><span>{signup ? 'Already have an account?' : 'New to Netflix?'}{' '}</span><b style={signup ? {color: '#3cb19f'} : {color: '#ec215f'}} onClick={()=>setSignup(!signup)}>Sign Up Now.</b></p>
+			<p><span>{signup ? 'Already have an account?' : 'New to Netflix?'}{' '}</span><b style={signup ? {color: '#3cb19f'} : {color: '#ec215f'}} onClick={()=>if(!loading){setSignup(!signup)}}>Sign Up Now.</b></p>
 		</form>
     </div>
   )

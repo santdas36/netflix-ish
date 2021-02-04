@@ -9,6 +9,20 @@ z-index: 1;
 display: grid;
 place-items: center;
 }
+form .error {
+padding: 0.5rem;
+border: 1px rgba(180,230,30,0.25) solid;
+color: #ed2;
+border-radius: 0.25rem;
+background: rgba(180,230,30,0.15);
+margin-bottom: 2rem;
+animation: showError 0.5s ease-out;
+}
+@keyframes showError {
+from{transform: scale(0.5);opacity: 0;}
+to{transform: scale(1); opacity: 1;}
+}
+
 .login::before {
 position: absolute;
 content: '';
@@ -74,6 +88,9 @@ color: #fff;
 margin-bottom: 1rem;
 font-weight: 500;
 font-family: "Mulish";
+}
+.login button:disabled {
+opacity: 0.6;
 }
 .login button:hover {
 transform: scale(1.02);
