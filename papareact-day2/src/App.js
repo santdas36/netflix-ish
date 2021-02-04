@@ -7,6 +7,8 @@ import BigList from "./BigList";
 import Results from "./Results";
 import Loading from "./Loading";
 import Footer from "./Footer";
+import Login from './Login';
+import Profile from './Profile';
 import "./App.css";
 import axios from './axios';
 import requests, { imageLargeBase, imageBase, fetchMovie, fetchTV, fetchSearchString, fetchRecommendedMovies, fetchRecommendedTV, fetchSimilarMovies, fetchSimilarTV } from './api';
