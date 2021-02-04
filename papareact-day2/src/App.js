@@ -38,22 +38,31 @@ function App() {
   const [listOne, setListOne] = useState(listOneInit);
   const [listTwo, setListTwo] = useState(listTwoInit);
   const [firstRun, setFirstRun] = useState(true);
-  var popularVisible = listOne === listOneInit;
+  let popularVisible = listOne === listOneInit;
 
   const errorOccurred = (error) => {
 	setLoading(false);
 	alert('Something went wrong.');
 	console.log(error.message);
   }
-
+  
+  const initRun = async () => {
+  	setLoading(true);
+  	setFirstRun(true);
+	  axios.get(requests.fetchTopRatedMovies).then((response) => {
+      	let tempMov = response.data.results;
+      	setTopRatedMovies(tempMov);
+      	let getFeatured = tempMov[Math.floor(Math.random() * tempMov.length)].id;
+      	getMovieInfo(getFeatured);
+      	setFeatTitle("Today's Featured Film");
+	 	setLoading(false);
+       }).catch((err) => errorOccurred(err));
+	 }
+	 
   const resetApp = () => {
   	setLoading(true);
   	setListOne(listOneInit);
   	setListTwo(listTwoInit);
-  	setTopRatedMovies([]);
-  	setFeaturedMovie([]);
-  	setVideoId('');
-  	setSearchResult([]);
   	setTimeout(() => initRun(), 1000);
   }
   
@@ -81,7 +90,7 @@ function App() {
 			type: 'movie',
 	 	});
 	 }
-	 setFirstRun(false);
+	 setTimeout(()=>setFirstRun(false), 1000);
       setVideoId(vidId);
 	 setLoading(false);
     }).catch((err) => errorOccurred(err));
@@ -116,20 +125,6 @@ function App() {
     }).catch((err) => errorOccurred(err));
   }
 
-  const initRun = async () => {
-  	setLoading(true);
-  	setFirstRun(true);
-	  axios.get(requests.fetchTopRatedMovies).then((response) => {
-      	let tempMov = response.data.results;
-      	setTopRatedMovies(tempMov);
-      	let getFeatured = tempMov[Math.floor(Math.random() * tempMov.length)].id;
-      	getMovieInfo(getFeatured);
-      	setFeatTitle("Today's Featured Film");
-	 	setLoading(false);
-       }).catch((err) => errorOccurred(err));
-	 }
-
-  
   useEffect(() => {
 	initRun();
   }, []);
