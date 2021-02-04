@@ -5,6 +5,7 @@ padding: 3rem;
 background: #2c3e50;
 margin-top: -6rem;
 position: relative;
+z-index: 1;
 }
 .login::before {
 position: absolute;
@@ -17,4 +18,5 @@ width: 100%;
 height: 100%;
 left: 0;
 top: 0;
+z-index: 2;
 }
