@@ -11,6 +11,7 @@ import Login from './Login';
 import Profile from './Profile';
 import "./App.css";
 import axios from './axios';
+import {auth} from './firebase';
 import requests, { imageLargeBase, imageBase, fetchMovie, fetchTV, fetchSearchString, fetchRecommendedMovies, fetchRecommendedTV, fetchSimilarMovies, fetchSimilarTV } from './api';
 
 const listOneInit = {
@@ -38,8 +39,19 @@ function App() {
   const [listOne, setListOne] = useState(listOneInit);
   const [listTwo, setListTwo] = useState(listTwoInit);
   const [firstRun, setFirstRun] = useState(true);
+  const [user, setUser] = useState(null);
   let popularVisible = listOne === listOneInit;
-
+  
+    useEffect(()=> {
+		auth.onAuthStateChanged((user) => {
+			if(user) {
+				setUser(user);
+			} else {
+				setUser(null);
+			}
+		});
+	}, []);
+  
   const errorOccurred = (error) => {
 	setLoading(false);
 	alert('Something went wrong.');
@@ -166,11 +178,11 @@ function App() {
 		<Header setLoading={setLoading} resetApp={resetApp} popularVisible={popularVisible} setSearchResult={setSearchResult} />
 
 		<Route path='/login'>
-			<Login/>
+			{user ? <Redirect to="/profile" /> : <Login/>}
 		</Route>
 		
 		<Route path='/profile'>
-			<Profile/>
+			{user ? <Profile/> : <Redirect to="/login" />}
 		</Route>
 		
 		<Route exact path='/'>
