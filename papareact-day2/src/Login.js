@@ -17,7 +17,7 @@ function Login() {
 		if (error) {
 			setTimeout(()=> {
 				setError(null);
-			}, 2000);
+			}, 10000);
 		}
 	}, [error]);
 	
@@ -35,7 +35,6 @@ function Login() {
 		} else {
 			auth.signInWithEmailAndPassword(email, password).then(()=> {
 				setLoading(false);
-				history.push('/profile');
 			}).catch((error) => {setError(error.message); setLoading(false)});
 		}
 	}
