@@ -52,7 +52,7 @@ function Login() {
 			}).catch((error) => {setError(error.message); setLoading(false)});
 		}
 	}
-	
+		
   return (
     <div className="login">
     	<form onSubmit={handleSubmit}>
