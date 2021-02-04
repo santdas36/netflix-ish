@@ -14,6 +14,7 @@
 	mix-blend-mode: overlay;
 	-webkit-mask-image: radial-gradient(ellipse farthest-side at 75% 10%, black, transparent);
 	pointer-events: none;
+    z-index: 10;
 }
 
 @media (max-width: 550px) {
