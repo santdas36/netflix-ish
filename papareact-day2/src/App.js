@@ -48,9 +48,12 @@ function App() {
 
   const resetApp = () => {
   	setLoading(true);
-  	setFirstRun(true);
   	setListOne(listOneInit);
   	setListTwo(listTwoInit);
+  	setTopRatedMovies([]);
+  	setFeaturedMovie([]);
+  	setVideoId('');
+  	setSearchResult([]);
   	setTimeout(() => initRun(), 1000);
   }
   
@@ -115,6 +118,7 @@ function App() {
 
   const initRun = async () => {
   	setLoading(true);
+  	setFirstRun(true);
 	  axios.get(requests.fetchTopRatedMovies).then((response) => {
       	let tempMov = response.data.results;
       	setTopRatedMovies(tempMov);
