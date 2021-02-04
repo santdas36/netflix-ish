@@ -10,7 +10,7 @@ function Profile({user}) {
     	<div className="profile__header">
 <img src={user?.photoURL || userIcon}>
 <h1>Hi, {user?.displayName}!</h1>
-		<button className="signout" onClick={()=> auth.SignOut()}>Sign Out</button>
+		<button className="signout" onClick={()=> auth.signOut()}>Sign Out</button>
 </div>
 <h3>Manage your subscription</h3>
 <div className="packs">
