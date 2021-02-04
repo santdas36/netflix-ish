@@ -10,7 +10,7 @@ position: relative;
 .app__user {
 margin-left: 2rem;
 margin-right: 0;
-height: 1.75rem;
+height: 2rem;
 border-radius: 10px;
 background: #2c3e50;
 padding: 0.125rem;
@@ -19,13 +19,13 @@ position: relative;
 z-index: 20;
 }
 .app__user img {
-width: 1.5rem;
+width: 1.75rem;
 border-radius: 10px;
 z-index: 2;
 }
 .app__user span {
 margin: 0 0.5rem;
-font-size: 0.75rem;
+font-size: 0.85rem;
 }
 
 
