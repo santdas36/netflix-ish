@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./Login.css";
-import {auth} from './firebase';
+import {auth, provider} from './firebase';
 import {useHistory, useLocation} from 'react-router-dom';
 
 function Login() {
@@ -13,6 +13,13 @@ function Login() {
 	const [signup, setSignup] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
+	
+	const googleSignIn = (e) => {
+		e.preventDefault();
+	    auth.signInWithPopup(provider).then((result) => {
+			console.log(result.user);
+		}).catch((error) => setError(error.message));
+	};
 	
 	useEffect(()=> {
 		if (location.state && location.state.email) {
@@ -66,7 +73,7 @@ function Login() {
 				<input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="••••••••" />
 			</div>
 			<button style={signup ? {backgroundColor: '#ec215f'} : {backgroundColor: '#3cb19f'}} disabled={loading}>{loading ? (signup ? 'Signing up...' : 'Logging In...') : (signup ? 'Create Account' : 'Log In')}</button>
-			<button className="google">Sign In with Google</button>
+			<button onClick={googleSignIn} className="google">Sign In with Google</button>
 			<p><span>{signup ? 'Already have an account?' : 'New to Netflix?'}{' '}</span><b style={signup ? {color: '#3cb19f'} : {color: '#ec215f'}} onClick={()=>{if(!loading){setSignup(!signup)}}}>Sign Up Now.</b></p>
 		</form>
     </div>
