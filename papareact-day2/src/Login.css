@@ -6,6 +6,8 @@ background: #2c3e50;
 margin-top: -6rem;
 position: relative;
 z-index: 1;
+display: grid;
+place-items: center;
 }
 .login::before {
 position: absolute;
