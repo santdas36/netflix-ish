@@ -78,12 +78,11 @@ function Header({ setSearchResult, setLoading, popularVisible, initRun }) {
 				<li><a href="#">Series</a></li>
 				<li><a href="#">Featured</a></li>
 			</ul>
-			<img className="app__title" src={NFLogo} onClick={()=>history.push('/')}/>
 			<div className="app__user" onClick={handleUser}>
 				<img src={auth.currentUser?.photoURL || UserIcon} />
 				<span>{auth.currentUser?.email || 'Login'}</span>
 			</div>
-	
+			<img className="app__title" src={NFLogo} onClick={()=>history.push('/')}/>
 		</div>
   )
 }

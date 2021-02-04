@@ -8,8 +8,8 @@ position: relative;
 }
 
 .app__user {
-margin-left: 2rem;
-margin-right: 0;
+margin-left: auto;
+margin-right: 2rem;
 height: 2rem;
 border-radius: 10px;
 background: #2c3e50;
@@ -80,7 +80,6 @@ font-size: 0.85rem;
 	height: 1.5rem;
 	width: auto;
 	margin: 0;
-	margin-left: auto;
 }
 
 form button {
