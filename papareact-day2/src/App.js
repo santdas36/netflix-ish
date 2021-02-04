@@ -51,7 +51,7 @@ function App() {
   	setFirstRun(true);
   	setListOne(listOneInit);
   	setListTwo(listTwoInit);
-  	initRun();
+  	setTimeout(() => initRun(), 1000);
   }
   
   const getMovieInfo = async (movieInfo) => {
