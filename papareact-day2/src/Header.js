@@ -9,7 +9,7 @@ import UserIcon from './assets/nfuser.jpg';
 import {auth} from './firebase';
 import {useHistory, useLocation} from 'react-router-dom';
 
-function Header({ setSearchResult, setLoading, popularVisible, initRun }) {
+function Header({ setSearchResult, setLoading, popularVisible, initRun, setFirstRun }) {
   const [input, setInput] = useState('');
   const inputEl = useRef(null);
   const searchEl = useRef(null);
@@ -24,8 +24,11 @@ function Header({ setSearchResult, setLoading, popularVisible, initRun }) {
   }
   
   const goBack = () => {
-  	initRun();
-  	history.push('/');
+  	setFirstRun(true);
+  	setTimeout(()=> {
+  		initRun();
+  		history.push('/');
+  	}, 100);
   }
 
   const searchQuery = (query) => {

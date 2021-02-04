@@ -156,7 +156,7 @@ function App() {
     <div className="app">
 		{loading && <Loading />}
 		
-		<Header setLoading={setLoading} popularVisible={popularVisible} setSearchResult={setSearchResult} initRun={initRun} />
+		<Header setFirstRun={setFirstRun} setLoading={setLoading} popularVisible={popularVisible} setSearchResult={setSearchResult} initRun={initRun} />
 
 		<Route path='/login'>
 			<Login/>
