@@ -74,8 +74,8 @@ function Header({ setSearchResult, setLoading, popularVisible }) {
 				<li><a href="#">Featured</a></li>
 			</ul>
 			<div className="app__user">
-				<img src={auth.currentUser.photoURL || UserIcon} onClick={handleUser} />
-				<span>{auth.currentUser.email || 'Login'}</span>
+				<img src={auth.currentUser?.photoURL || UserIcon} onClick={handleUser} />
+				<span>{auth.currentUser?.email || 'Login'}</span>
 			</div>
 			<img className="app__title" src={NFLogo} onClick={()=>history.push('/')}/>
 		</div>
