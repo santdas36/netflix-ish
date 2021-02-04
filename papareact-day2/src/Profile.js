@@ -26,11 +26,11 @@ function Profile({user}) {
 		<p className="price">$ 29.99</p>
 		<button>Activate Now</button>
 	</div>
-	<div className="pack">
+	<div className="pack active">
 		<h3>Netflix HD</h3>
 		<p className="desc">Maximum Five Screens, 1080p HD Streaming</p>
 		<p className="price">$ 49.99</p>
-		<button>Activate Now</button>
+		<button>Renews in 12 days</button>
 	</div>
 	<div className="pack">
 		<h3>Netflix Premium</h3>

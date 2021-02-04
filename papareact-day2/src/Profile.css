@@ -52,6 +52,7 @@ text-align: center;
 display: flex;
 flex-flow: column;
 max-width: 240px;
+transition: all 0.2s;
 }
 .pack h3 {
 font-size: 1.2rem;
@@ -81,3 +82,30 @@ transition: all 0.2s;
 background: #ec215f;
 padding: 0.6rem 1.5rem;
 }
+
+.pack:hover, .pack button:hover,  button.signout:hover {
+transform: scale(1.05);
+box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.15);
+}
+.packs .pack.active {
+background: #4ca1af;
+color: white;
+border: 2px rgba(255,255,255,1) solid;
+position: relative;
+overflow: hidden;
+}
+.packs .pack.active::before {
+content: 'Active';
+position: absolute;
+transform: rotate(45deg) translate(30%, -120%) scale(0.8);
+right: 0;
+top: 0;
+padding: 0.5rem 6rem;
+background: #ec215f;
+}
+.packs .pack.active button{
+background: none;
+border: 1px rgba(255,255,255,0.25) solid;
+box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.15);
+}
+
