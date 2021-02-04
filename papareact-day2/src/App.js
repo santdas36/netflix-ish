@@ -106,6 +106,7 @@ function App() {
   }
 
   const initRun = async () => {
+  	setLoading(true);
 	  axios.get(requests.fetchTopRatedMovies).then((response) => {
       	let tempMov = response.data.results;
       	setTopRatedMovies(tempMov);
