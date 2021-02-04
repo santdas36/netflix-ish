@@ -82,7 +82,7 @@ font-size: 0.85rem;
 	margin: 0;
 }
 
-form button {
+.app__header form button {
 	display: none;
 }
 
