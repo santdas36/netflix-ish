@@ -8,7 +8,7 @@ function Profile({user}) {
   return (
     <div className="profile">
     	<div className="profile__header">
-<img src={user?.photoURL || userIcon}>
+<img src={user?.photoURL || userIcon} />
 <h1>Hi, {user?.displayName}!</h1>
 		<button className="signout" onClick={()=> auth.signOut()}>Sign Out</button>
 </div>
