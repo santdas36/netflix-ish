@@ -13,15 +13,16 @@ margin-right: 2rem;
 height: 2rem;
 border-radius: 10px;
 background: #4ca1af;
-box-shadow: 0 0.5rem 0.5rem -0.15rem rgba(0,0,0,0.5);
 padding: 0.125rem;
 cursor: pointer;
 position: relative;
+filter: drop-shadow(0 0.25rem 1rem rgba(0,0,0,0.05));
 }
 .app__user img {
 width: 1.75rem;
 border-radius: 10px;
 z-index: 2;
+filter: drop-shadow(0 0.15rem 0.25rem rgba(0,0,0,0.15));
 }
 .app__user span {
 margin: 0 0.5rem;
@@ -80,6 +81,7 @@ font-size: 0.85rem;
 	height: 1.5rem;
 	width: auto;
 	margin: 0;
+
 }
 
 .app__header form button {
