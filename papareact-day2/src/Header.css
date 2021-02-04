@@ -3,7 +3,7 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 2rem 3rem;
-z-index: 9;
+z-index: 20;
 position: relative;
 }
 
@@ -16,7 +16,6 @@ background: #2c3e50;
 padding: 0.125rem;
 cursor: pointer;
 position: relative;
-z-index: 20;
 }
 .app__user img {
 width: 1.75rem;
