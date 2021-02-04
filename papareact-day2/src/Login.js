@@ -8,11 +8,17 @@ function Login() {
 	const history = useHistory();
 	const location = useLocation();
 	const [name, setName] = useState('');
-	const [email, setEmail] = useState(location.state.email);
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [signup, setSignup] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
+	
+	useEffect(()=> {
+		if (location.state && location.state.email) {
+			setEmail(location.state.email);
+		}
+	}, []);
 	
 	useEffect(()=> {
 		if (error) {
