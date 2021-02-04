@@ -8,6 +8,7 @@ import Results from "./Results";
 import Loading from "./Loading";
 import Footer from "./Footer";
 import Login from './Login';
+import About from './About';
 import Profile from './Profile';
 import "./App.css";
 import axios from './axios';
@@ -177,6 +178,10 @@ function App() {
 		
 		<Header setLoading={setLoading} resetApp={resetApp} popularVisible={popularVisible} setSearchResult={setSearchResult} />
 
+		<Route path='/about'>
+			<About/>
+		</Route>
+		
 		<Route path='/login'>
 			{user ? <Redirect to="/profile" /> : <Login/>}
 		</Route>
