@@ -1,4 +1,4 @@
-.login {
+.about {
 width: 100%;
 min-height: 100vh;
 padding: 3rem;
@@ -9,7 +9,7 @@ z-index: 1;
 display: grid;
 place-items: center;
 }
-.login::before {
+.about::before {
 position: absolute;
 content: '';
 background-image: url(./assets/aboutbg.jpg);
