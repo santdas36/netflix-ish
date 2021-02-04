@@ -9,7 +9,7 @@ import UserIcon from './assets/nfuser.jpg';
 import {auth} from './firebase';
 import {useHistory, useLocation} from 'react-router-dom';
 
-function Header({ setSearchResult, setLoading, popularVisible }) {
+function Header({ setSearchResult, setLoading, popularVisible, initRun }) {
   const [input, setInput] = useState('');
   const inputEl = useRef(null);
   const searchEl = useRef(null);
@@ -21,6 +21,11 @@ function Header({ setSearchResult, setLoading, popularVisible }) {
 	setLoading(false);
 	alert('Something went wrong.');
 	console.log(error.message);
+  }
+  
+  const goBack = () => {
+  	initRun();
+  	history.push('/');
   }
 
   const searchQuery = (query) => {
@@ -60,7 +65,7 @@ function Header({ setSearchResult, setLoading, popularVisible }) {
   return (
     <div className="app__header" style={location.pathname === "/" ? {backgroundColor: '#4ca1af'} : {}}>
 			<ul className="app__nav">
-				{(!popularVisible || location.pathname !== '/') && <li className="app__back mobile" onClick={() => window.location.reload()}><ChevronLeftRoundedIcon style={{ fontSize: 24 }} /></li>}
+				{(!popularVisible || location.pathname !== '/') && <li className="app__back mobile" onClick={goBack}><ChevronLeftRoundedIcon style={{ fontSize: 24 }} /></li>}
 				<li className={`app__search mobile ${(searchOpen || input) ? "open" : ""}`} onClick={searchClick}>
 					<SearchRoundedIcon style={{ fontSize: 20 }} className="app__searchIcon" onClick={searchClick} />
 					<form>

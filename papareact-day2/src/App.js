@@ -105,8 +105,7 @@ function App() {
     }).catch((err) => errorOccurred(err));
   }
 
-  useEffect(() => {
-    const initRun = async () => {
+  const initRun = async () => {
 	  axios.get(requests.fetchTopRatedMovies).then((response) => {
       	let tempMov = response.data.results;
       	setTopRatedMovies(tempMov);
@@ -117,6 +116,8 @@ function App() {
        }).catch((err) => errorOccurred(err));
 	 }
 
+  
+  useEffect(() => {
 	initRun();
   }, []);
 
@@ -154,7 +155,7 @@ function App() {
     <div className="app">
 		{loading && <Loading />}
 		
-		<Header setLoading={setLoading} popularVisible={popularVisible} setSearchResult={setSearchResult} />
+		<Header setLoading={setLoading} popularVisible={popularVisible} setSearchResult={setSearchResult} initRun={initRun} />
 
 		<Route path='/login'>
 			<Login/>
