@@ -9,7 +9,7 @@ function Profile({user}) {
 	const stripe = useStripe();	
 	const checkout = (priceId, e) => {
 		e.preventDefault();
-		fetch(`/api/create-checkout-session?priceId=${priceId}`, {
+		fetch(`/api/create-checkout-session?priceId=${priceId}&email=${user.email}`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

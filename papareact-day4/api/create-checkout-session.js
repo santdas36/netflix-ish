@@ -5,12 +5,14 @@ export default async (request, response) => {
 		return response.status(400).send('400 Bad Request');
 	}
 	const priceId = request.query.priceId;
+	const email = request.query.email;
 	try {
 	const session = await stripe.checkout.sessions.create({
 		success_url: 'https://papareact-day4.vercel.app/profile',
 		cancel_url: 'https://papareact-day4.vercel.app/profile',
 		mode: 'subscription',
 		payment_method_types: ['card'],
+		customer_email: email,
 		line_items: [{
           price: priceId,
           quantity: 1,
