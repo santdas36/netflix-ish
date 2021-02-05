@@ -72,7 +72,7 @@ function Profile({user, setLoading}) {
     	<div className="profile__header">
 <img src={user?.photoURL || userIcon} />
 <h1>Hi, {user?.displayName}!</h1>
-		<button className="signout" onClick={()=> auth.signOut()}>Sign Out</button>
+		<button className="signout" onClick={()=> {auth.signOut();toast.info('You are now signed out!');}}>Sign Out</button>
 </div>
 <h3>{activePack ? 'Manage your subscription' : 'Subscribe Now to Start Watching'}</h3>
 <div className="packs">
