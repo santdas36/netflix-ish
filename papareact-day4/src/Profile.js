@@ -4,11 +4,12 @@ import userIcon from './assets/nfuser.jpg';
 import {auth} from './firebase';
 import {useStripe} from '@stripe/react-stripe-js';
 
-function Profile({user}) {
+function Profile({user, setLoading}) {
 	
 	const stripe = useStripe();	
 	const checkout = (priceId, e) => {
 		e.preventDefault();
+		setLoading(true);
 		fetch(`/api/create-checkout-session?priceId=${priceId}&email=${user.email}`, {
 			method: "POST",
 			headers: {
@@ -21,9 +22,9 @@ function Profile({user}) {
 			} else {	
 				stripe.redirectToCheckout({
 					sessionId: data.sessionId,
-				})
+				}).then((response) => {console.log(response);setLoading(false);});
 			}
-		}).catch((err) => console.log(err));
+		}).catch((error) => console.log(error.message));
 	}
 
 	
