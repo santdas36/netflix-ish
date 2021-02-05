@@ -86,7 +86,7 @@ function Profile({user, setLoading}) {
 		</ul>
 		<p className="price">$ {pack.price}<small>/{pack.duration}</small></p>
 		<button disabled={pack.priceId === activePack} onClick={(e)=> checkout(pack.priceId)}>{pack.priceId === activePack ? `Renews in ${parseInt((subs.current_period_end - subs.current_period_start)/(24*60*60))} day(s)` : 'Activate Now'}</button>
-	</div>
+	</motion.div>
 ))}
 </div>
 <p className="pack__info">All plans come with a 30 days FREE trial period. Cancel anytime.</p>
