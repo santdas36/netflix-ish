@@ -35,6 +35,9 @@ function Success() {
 			} else {
 				setError('You are not logged in!');
 			}
+		});
+		
+		return unsubscribe;
 	}, []);
 	
   return (
