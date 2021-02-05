@@ -1,11 +1,12 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import "./Profile.css";
 import userIcon from './assets/nfuser.jpg';
-import {auth} from './firebase';
+import {auth, db} from './firebase';
 import {useStripe} from '@stripe/react-stripe-js';
 
 function Profile({user, setLoading}) {
 	
+	const [subs, setSubs] = useState(null);
 	const stripe = useStripe();	
 	const checkout = (priceId, e) => {
 		e.preventDefault();
@@ -27,6 +28,11 @@ function Profile({user, setLoading}) {
 		}).catch((error) => console.log(error.message));
 	}
 
+	useEffect(()=> {
+		db.collection('users').doc(user.uid).get().then((data)=> {
+			setSubs(data.data().subscription);
+		});
+	}, []);
 	
   return (
     <div className="profile">
