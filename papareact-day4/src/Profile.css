@@ -1,0 +1,124 @@
+.profile {
+width: 100%;
+min-height: 100vh;
+padding: 3rem;
+background: #2c3e50;
+margin-top: -6rem;
+position: relative;
+z-index: 1;
+padding-top: 6rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.profile__header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 3rem;
+width: 100%;
+max-width: 720px;
+}
+.profile__header img {
+width: 4rem;
+border-radius: 6rem;
+}
+.profile__header h1 {
+font-size: 1.5rem;
+font-weight: 400;
+font-family: 'Work Sans';
+margin: 0;
+line-height: 1;
+margin-right: auto;
+margin-left: 1.5rem;
+}
+.profile h3 {
+margin: auto 0 3rem 0;
+text-align: center;
+}
+.packs {
+display: flex;
+flex-direction: row wrap;
+gap: 1rem;
+margin: auto;
+margin-top: 0;
+}
+.packs .pack {
+background: white;
+border-radius: 0.5rem;
+flex: 0.25;
+color: #2c3e50;
+padding: 1rem;
+text-align: center;
+display: flex;
+flex-flow: column;
+max-width: 240px;
+transition: all 0.2s;
+}
+.pack h3 {
+font-size: 1.2rem;
+margin: 1.5rem 0;
+}
+.pack .desc {
+width: 100%;
+margin-bottom: 3rem;
+padding: 0;
+list-style-type: none;
+}
+.pack .desc li {
+line-height: 1.5;
+}
+.plan__info {
+margin-top: 2rem;
+}
+.pack .price {
+margin-top: auto;
+font-weight: 700;
+font-size: 1.15rem;
+}
+
+.profile button {
+font-family: "Mulish";
+font-weight: 700;
+background: #4ca1af;
+border-radius: 0.5rem;
+padding: 0.6rem 0.75rem;
+border: 1px rgba(255,255,255,0.15) solid;
+color: #fff;
+transition: all 0.2s;
+}
+.profile button.signout, button.cancel {
+background: #ec215f;
+padding: 0.6rem 1.5rem;
+}
+button.cancel {
+margin-top: 3rem;
+margin-bottom: auto;
+}
+.pack:hover, .profile button:hover {
+transform: scale(1.05);
+box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.15);
+}
+.packs .pack.active {
+background: #4ca1af;
+color: white;
+border: 2px rgba(255,255,255,1) solid;
+position: relative;
+overflow: hidden;
+}
+.packs .pack.active::before {
+content: 'Active';
+position: absolute;
+transform: rotate(45deg) translate(30%, -120%) scale(0.8);
+right: 0;
+top: 0;
+padding: 0.5rem 6rem;
+background: #ec215f;
+}
+.packs .pack.active button{
+background: none;
+border: 1px rgba(255,255,255,0.25) solid;
+box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.15);
+}
+

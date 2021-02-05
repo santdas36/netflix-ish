@@ -1,0 +1,122 @@
+.app__featured {
+	padding: 7rem 3rem 3rem;
+	width: 100%;
+	background: linear-gradient(to top, #3a6979, #4ca1af);
+}
+
+.app__featuredInfo {
+	margin: 0;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.app__featuredTitle {
+	font-weight: 900;
+max-width: 840px;
+}
+
+.app__featuredGenres {
+	text-transform: uppercase;
+	font-size: 0.95rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 4px;
+	font-weight: 500;
+}
+
+.app__seriesSeasons {
+	text-transform: uppercase;
+	font-size: 0.95rem;
+	margin: 0;
+	margin-top: 1rem;
+	font-weight: 500;
+}
+
+.app__featuredGenre:not(:last-of-type):after {
+	content: ", ";
+}
+
+.app__featuredCert {
+	padding: 0.25rem 0.5rem;
+	background: rgba(255,255,255,0.1);
+	border: 1px solid #fff;
+	border-radius: 5px;
+	margin-right: 0.5rem;
+	margin-left: -4px;
+}
+
+.app__featuredYear {
+	font-size: 1.5rem;
+	margin-left: 0.75rem;
+	font-family: "Work Sans", sans-serif;
+	font-weight: 400;
+	opacity: 0.5;
+}
+
+.app__featuredDesc {
+	width: 50%;
+}
+
+.app__featuredDesc a {
+	opacity: 0.5;
+	transition: opacity 0.1s ease;
+}
+
+.app__featuredDesc a:hover {
+	opacity: 1;
+}
+
+.app__featuredRating {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.MuiRating-iconEmpty {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.app__featuredLikes {
+	margin: 0 0 8px 0.5rem;
+}
+
+.app__button {
+	border-radius: 99px !important;
+	color: #3a6979 !important;
+	font-weight: 500 !important;
+	font-family: "Work Sans", sans-serif !important;
+	background-color: rgb(255, 255, 255) !important;
+}
+
+.app__button:hover {
+	background-color: rgb(215, 215, 215) !important;
+}
+
+@media (max-width: 550px) {
+	.app__featured {
+		padding: 7rem 1.5rem 3rem 1.5rem;
+	}
+
+	.app__featuredDesc {
+		width: 100%;
+		font-size: 0.85rem;
+	}
+
+	.app__featuredGenres,
+	.app__seriesSeasons {
+		font-size: 14px !important;
+	}
+
+	.app__featuredCert {
+		padding: 0.15rem 0.3rem;
+	}
+
+	.app__featuredInfo {
+		font-size: 0.66rem;
+	}
+
+	.app__featuredYear {
+		font-size: 1rem;
+	}
+}

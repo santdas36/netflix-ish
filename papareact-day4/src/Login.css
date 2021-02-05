@@ -1,0 +1,123 @@
+.login {
+width: 100%;
+min-height: 100vh;
+padding: 3rem;
+background: #2c3e50;
+margin-top: -6rem;
+position: relative;
+z-index: 1;
+display: grid;
+place-items: center;
+}
+form .error {
+padding: 0.5rem;
+border: 1px rgba(180,230,30,0.25) solid;
+color: #ed2;
+border-radius: 0.25rem;
+background: rgba(180,230,30,0.15);
+margin-bottom: 2rem;
+animation: showError 0.5s ease-out;
+}
+@keyframes showError {
+from{transform: scale(0.5);opacity: 0;}
+to{transform: scale(1); opacity: 1;}
+}
+
+.login::before {
+position: absolute;
+content: '';
+background-image: url(./assets/nfbg.jpg);
+background-size: cover;
+mix-blend-mode: overlay;
+-webkit-mask-image: radial-gradient(ellipse farthest-side at 50% 50%, #2c3e50, rgba(0,0,0,0.1));
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+z-index: 2;
+}
+
+.login form {
+background: rgba(23,32,50,0.75);
+padding: 3rem;
+margin: 6rem 1.5rem 1.5rem 1.5rem;
+z-index: 99;
+border: 1px rgba(255,255,255,0.5) solid;
+border-radius: 1rem;
+width: 100%;
+max-width: 25rem;
+}
+.login .input {
+display: flex;
+flex-direction: column;
+margin-bottom: 1.5rem;
+}
+.login input {
+background: #2c3e50;
+padding: 0.6rem 0.75rem;
+width: 100%;
+border: 1px rgba(255,255,255,0.15) solid;
+border-radius: 0.25rem;
+color: #fff;
+font-family: "Work Sans";
+font-weight: 500;
+transition: all 0.2s;
+}
+.login label {
+opacity: 0.75;
+font-size: 0.95rem;
+margin-bottom: 0.5rem;
+font-family: "Mulish";
+}
+.login h3 {
+margin-bottom: 3rem;
+}
+.login input:focus {
+border: 1px rgba(255,255,255,0.5) solid;
+background: #4ca1af;
+outline: none;
+}
+.login button {
+background: #3cb19f;
+padding: 0.65rem 0.75rem;
+width: 100%;
+border: none;
+border-radius: 0.25rem;
+transition: all 0.2s;
+color: #fff;
+margin-bottom: 1rem;
+font-weight: 500;
+font-family: "Mulish";
+}
+.login button:disabled {
+opacity: 0.6;
+}
+.login button:hover {
+transform: scale(1.02);
+}
+.login button:focus {
+transform: scale(0.98);
+outline: none;
+}
+.login button.google {
+background: rgba(255,255,255,0.05);
+border: 1px rgba(255,255,255,0.5) solid;
+font-weight: 400;
+}
+.login form p {
+margin-top: 1.5rem;
+font-size: 0.95rem;
+font-family: "Mulish";
+}
+.login form p span {
+opacity: 0.75;
+}
+.login form p b {
+font-weight: 800;
+text-decoration: none;
+transition: all 0.2s;
+}
+form p b:hover {
+text-decoration: underline !important;
+}
+

@@ -1,0 +1,109 @@
+.app__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 3rem;
+z-index: 20;
+position: relative;
+}
+
+.app__user {
+margin-left: auto;
+margin-right: 2rem;
+height: 2rem;
+border-radius: 10px;
+background: #4ca1af;
+padding: 0.125rem;
+cursor: pointer;
+position: relative;
+filter: drop-shadow(0 0.25rem 1rem rgba(0,0,0,0.05));
+}
+.app__user img {
+width: 1.75rem;
+border-radius: 10px;
+z-index: 2;
+filter: drop-shadow(0 0.15rem 0.25rem rgba(0,0,0,0.15));
+}
+.app__user span {
+margin: 0 0.5rem;
+font-size: 0.85rem;
+white-space: nowrap;
+}
+
+
+.app__nav {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+}
+
+.app__nav li a {
+	text-transform: uppercase;
+transition: all 0.2s;
+}
+
+.app__nav li a.active {
+font-weight: 700;
+}
+.app__nav li+li {
+	margin-left: 2rem;
+}
+
+.app__search {
+	display: flex;
+	align-items: center;
+	background: transparent;
+	padding: 0.25rem;
+	padding-left: 0.375rem;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 99px;
+	transition: width 0.2s;
+	width: calc(2rem + 1px);
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.app__search.open {
+	width: 12rem;
+}
+
+.app__searchIcon {
+	margin-right: 0.375rem;
+}
+
+.app__search input {
+	background: transparent;
+	color: #fff;
+	border: none;
+	width: 100%;
+	padding-right: 0.5rem;
+}
+
+.app__title {
+	height: 1.5rem;
+	width: auto;
+	margin: 0;
+
+}
+
+.app__header form button {
+	display: none;
+}
+
+@media (max-width: 550px) {
+	.app__header {
+		padding: 2rem 1.5rem;
+		overflow: hidden;
+	}
+
+	.app__nav li:not(.mobile) {
+		display: none;
+	}
+
+	.app__back + .app__search {
+		margin: 0 1rem !important;
+	}
+}

@@ -1,0 +1,79 @@
+.about {
+width: 100%;
+min-height: 100vh;
+padding: 3rem;
+background: #2c3e50;
+margin-top: -6rem;
+position: relative;
+z-index: 1;
+display: grid;
+place-items: center;
+}
+.about::before {
+position: absolute;
+content: '';
+background-image: url(./assets/aboutbg.jpg);
+background-size: cover;
+mix-blend-mode: overlay;
+-webkit-mask-image: radial-gradient(ellipse farthest-side at 50% 50%, #2c3e50, rgba(0,0,0,0.1));
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+z-index: 2;
+}
+
+.about__inner {
+text-align: center;
+max-width: 600px;
+z-index: 99;
+}
+.about__inner h1 {
+font-size: 3rem;
+font-size: clamp(2rem, 5vw, 4rem);
+margin-bottom: 1.5rem;
+}
+.about__inner h2 {
+font-family: "Work Sans";
+font-weight: 500;
+font-size: 1.15rem;
+}
+.about__inner .subscribe {
+width: 100%;
+display: flex;
+margin-top: 5rem;
+margin-bottom: 1rem;
+}
+.about__inner input, .about__inner button {
+padding: 0.6rem 0.75rem;
+border: 1px rgba(255,255,255,0.15) solid;
+color: #fff;
+font-weight: 500;
+transition: all 0.2s;
+}
+.about__inner input:focus {
+border: 1px #4ca1af solid;
+border-right: none;
+}
+.about__inner input:focus, .about__inner button:focus {
+outline: none;
+}
+.about__inner input::placeholder {
+color: #2c3e50;
+opacity: 0.5;
+font-weight: 400;
+}
+.about__inner input {
+flex: 0.7;
+background: #fff;
+border-radius: 0.5rem 0 0 0.5rem;
+color: #2c3e50;
+font-family: "Work Sans";
+}
+.about__inner button {
+flex: 0.3;
+font-family: "Mulish";
+font-weight: 700;
+background: #4ca1af;
+border-radius: 0 0.5rem 0.5rem 0;
+}

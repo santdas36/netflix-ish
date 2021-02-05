@@ -1,0 +1,25 @@
+.app {
+	position: relative;
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.app__overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 75%;
+	height: 30rem;
+	mix-blend-mode: overlay;
+	-webkit-mask-image: radial-gradient(ellipse farthest-side at 75% 10%, black, transparent);
+	pointer-events: none;
+    z-index: 10;
+}
+
+@media (max-width: 550px) {
+	.app__overlay {
+		width: 85%;
+		background-position: 50% 0% !important;
+	}
+}
