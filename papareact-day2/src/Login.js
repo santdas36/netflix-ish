@@ -16,8 +16,9 @@ function Login() {
 	
 	const googleSignIn = (e) => {
 		e.preventDefault();
+		setLoading(true);
 	    auth.signInWithPopup(provider).then((result) => {
-			console.log(result.user);
+			setLoading(false);
 		}).catch((error) => setError(error.message));
 	};
 	
