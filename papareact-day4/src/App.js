@@ -196,7 +196,7 @@ function App() {
 		<Route path='/profile'>
 			{user ? (
 			<Elements stripe={stripeInit}>
-				<Profile user={user}/>
+				<Profile user={user} setLoading={setLoading} />
 			</Elements>) :
 			<Redirect to="/login" />}
 		</Route>
