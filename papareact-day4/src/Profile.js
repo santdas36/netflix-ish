@@ -81,7 +81,7 @@ function Profile({user, setLoading}) {
 		<li>{pack.d2}</li>
 		</ul>
 		<p className="price">$ {pack.price}<small>/{pack.duration}</small></p>
-		<button disabled={pack.priceId === activePack} onClick={(e)=> checkout(pack.priceId)}>{pack.priceId === activePack ? `Renews in ${((subs.current_period_end - subs.current_period_end)/(24*60*60)).toFixed()} day(s)` : 'Activate Now'}</button>
+		<button disabled={pack.priceId === activePack} onClick={(e)=> checkout(pack.priceId)}>{pack.priceId === activePack ? `Renews in ${parseInt((subs.current_period_end - subs.current_period_start)/(24*60*60))} day(s)` : 'Activate Now'}</button>
 	</div>
 ))}
 </div>
