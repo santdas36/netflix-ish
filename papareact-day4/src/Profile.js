@@ -20,7 +20,7 @@ function Profile({user}) {
 		<li>Mobile only</li>
 		<li>480p SD Streaming</li>
 		</ul>
-		<p className="price">$ 19.99/month</p>
+		<p className="price">$ 19.99<small>/month</small></p>
 		<button>Activate Now</button>
 	</div>
 	<div className="pack">
@@ -29,7 +29,7 @@ function Profile({user}) {
 		<li>Two screens</li>
 		<li>480p SD Streaming</li>
 		</ul>
-		<p className="price">$ 29.99/month</p>
+		<p className="price">$ 29.99<small>/month</small></p>
 		<button>Activate Now</button>
 	</div>
 	<div className="pack active">
@@ -38,7 +38,7 @@ function Profile({user}) {
 		<li>Max 5 screens</li>
 		<li>1080p HD Streaming</li>
 		</ul>
-		<p className="price">$ 39.99/month</p>
+		<p className="price">$ 39.99<small>/month</small></p>
 		<button>Renews in 12 days</button>
 	</div>
 	<div className="pack">
@@ -47,11 +47,11 @@ function Profile({user}) {
 		<li>Unlimited screens</li>
 		<li>4K UHD Streaming</li>
 		</ul>
-		<p className="price">$ 499.99/yr</p>
+		<p className="price">$ 499.99<small>/year</small></p>
 		<button>Activate Now</button>
 	</div>
 </div>
-
+<p className="pack__info">All plans come with a 30 days FREE trial period. Cancel anytime.</p>
 <button className="cancel">Cancel Subscription</button>
     </div>
   )

@@ -77,6 +77,10 @@ margin-top: auto;
 font-weight: 700;
 font-size: 1.15rem;
 }
+.pack .price small {
+font-weight: 500;
+font-size: 75%;
+}
 
 .profile button {
 font-family: "Mulish";
