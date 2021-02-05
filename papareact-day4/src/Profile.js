@@ -7,13 +7,15 @@ import {useStripe} from '@stripe/react-stripe-js';
 function Profile({user}) {
 	
 	const stripe = useStripe();	
-	const checkout = (priceId) => {
+	const checkout = (priceId, e) => {
+		e.preventDefault();
 		fetch(`/api/create-checkout-session?priceId=${priceId}`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
 			},
 		}).then((result) => result.json()).then((data) => {
+			console.log(data);
 			if (data.error) {
 				console.log(data.error.message)
 			} else {	
@@ -22,7 +24,7 @@ function Profile({user}) {
 					customerEmail: user.email,
 				})
 			}
-		});
+		}).catch((err) => console.log(err));
 	}
 
 	
@@ -42,7 +44,7 @@ function Profile({user}) {
 		<li>480p SD Streaming</li>
 		</ul>
 		<p className="price">$ 19.99<small>/month</small></p>
-		<button onClick={()=> checkout('price_1IHThZGVr4f6jXHSzK1GUgJd')}>Activate Now</button>
+		<button onClick={(e)=> checkout('price_1IHThZGVr4f6jXHSzK1GUgJd', e)}>Activate Now</button>
 	</div>
 	<div className="pack">
 		<h3>Netflix Lite</h3>
@@ -51,7 +53,7 @@ function Profile({user}) {
 		<li>480p SD Streaming</li>
 		</ul>
 		<p className="price">$ 29.99<small>/month</small></p>
-		<button onClick={()=> checkout('price_1IHTmPGVr4f6jXHSav4jhyQg')}>Activate Now</button>
+		<button onClick={(e)=> checkout('price_1IHTmPGVr4f6jXHSav4jhyQg', e)}>Activate Now</button>
 	</div>
 	<div className="pack active">
 		<h3>Netflix HD</h3>
@@ -60,7 +62,7 @@ function Profile({user}) {
 		<li>1080p HD Streaming</li>
 		</ul>
 		<p className="price">$ 39.99<small>/month</small></p>
-		<button onClick={()=> checkout('price_1IHTs5GVr4f6jXHSID3JNFyr')}>Renews in 12 days</button>
+		<button onClick={(e)=> checkout('price_1IHTs5GVr4f6jXHSID3JNFyr', e)}>Renews in 12 days</button>
 	</div>
 	<div className="pack">
 		<h3>Netflix Premium</h3>
@@ -69,7 +71,7 @@ function Profile({user}) {
 		<li>4K UHD Streaming</li>
 		</ul>
 		<p className="price">$ 499.99<small>/year</small></p>
-		<button onClick={()=> checkout('price_1IHTucGVr4f6jXHSbmX7mkFI')}>Activate Now</button>
+		<button onClick={(e)=> checkout('price_1IHTucGVr4f6jXHSbmX7mkFI', e)}>Activate Now</button>
 	</div>
 </div>
 <p className="pack__info">All plans come with a 30 days FREE trial period. Cancel anytime.</p>
