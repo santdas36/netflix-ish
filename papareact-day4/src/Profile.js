@@ -49,7 +49,7 @@ function Profile({user, setLoading}) {
 	}
 
 	useEffect(()=> {
-		const unsubscribe = db.collection('users').doc(user.uid).onSnapshot(data)=> {
+		const unsubscribe = db.collection('users').doc(user.uid).onSnapshot((data)=> {
 			const subAvailable = data.data().subscription;
 			if (subAvailable) {
 				setSubs(subAvailable);
