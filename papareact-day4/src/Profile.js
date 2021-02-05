@@ -4,7 +4,7 @@ import userIcon from './assets/nfuser.jpg';
 import {auth} from './firebase';
 import {loadStripe} from '@stripe/stripe-js';
 
-const stripe = await loadStripe('process.env.STRIPE_PK');
+const stripe = loadStripe(process.env.STRIPE_PK);
 console.log(process.env.STRIPE_PK, process.env.STRIPE_SK);
 
 function Profile({user}) {
