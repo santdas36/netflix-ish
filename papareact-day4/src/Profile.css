@@ -41,6 +41,8 @@ text-align: center;
 display: flex;
 flex-direction: row wrap;
 gap: 1rem;
+width: 100%;
+max-width: 1024px;
 margin: auto;
 margin-top: 0;
 }
