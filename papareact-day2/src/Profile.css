@@ -16,7 +16,7 @@ align-items: center;
 display: flex;
 justify-content: space-between;
 align-items: center;
-margin-top: 3rem;
+margin-top: 0;
 width: 100%;
 max-width: 720px;
 }
@@ -41,6 +41,7 @@ text-align: center;
 display: flex;
 flex-direction: row wrap;
 gap: 1rem;
+margin: auto;
 }
 .packs .pack {
 background: white;
@@ -84,6 +85,7 @@ padding: 0.6rem 1.5rem;
 }
 button.cancel {
 margin-top: 3rem;
+margin-bottom: auto;
 }
 .pack:hover, .profile button:hover, {
 transform: scale(1.05);
