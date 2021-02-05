@@ -27,6 +27,7 @@ filter: drop-shadow(0 0.15rem 0.25rem rgba(0,0,0,0.15));
 .app__user span {
 margin: 0 0.5rem;
 font-size: 0.85rem;
+white-space: nowrap;
 }
 
 
