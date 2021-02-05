@@ -64,7 +64,7 @@ function App() {
   const initRun = async () => {
   	setLoading(true);
   	setFirstRun(true);
-	  axios.get(requests.fetchTopRatedMovies).then((response) => {
+	  axios.get(requests.fetchPopularMovies).then((response) => {
       	let tempMov = response.data.results;
       	setTopRatedMovies(tempMov);
       	let getFeatured = tempMov[Math.floor(Math.random() * tempMov.length)].id;

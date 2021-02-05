@@ -18,7 +18,7 @@ useEffect(() => {
     axios.get(requests.fetchGenres).then((response) => {
       setGenres(response.data.genres);
     }).catch((err) => errorOccurred(err));
-    axios.get(requests.fetchPopularMovies).then((response) => {
+    axios.get(requests.fetchTopRatedMovies).then((response) => {
       setPopularMovies(response.data.results);
     }).catch((err) => errorOccurred(err));
   }
@@ -48,7 +48,7 @@ useEffect(() => {
     <div className="list">
 
 			<div class="list__trending">
-				<h4>Popular Movies</h4>
+				<h4>Top Rated Movies</h4>
 				<div class="list__items">
 					{ popularMovies?.slice(0, 10).map((movie) => 
 						(<div class="list__item" onClick={() => handleClick(movie)}>
