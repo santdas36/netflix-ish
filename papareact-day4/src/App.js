@@ -15,6 +15,7 @@ import axios from './axios';
 import {auth} from './firebase';
 import requests, { imageLargeBase, imageBase, fetchMovie, fetchTV, fetchSearchString, fetchRecommendedMovies, fetchRecommendedTV, fetchSimilarMovies, fetchSimilarTV } from './api';
 import {loadStripe} from '@stripe/stripe-js';
+import { Elements } from "@stripe/react-stripe-js";
 
 const stripeInit = loadStripe('pk_test_51IHTc9GVr4f6jXHSUkrVLoy2Y1PHmiJImQvQ7WFgGShZ6cYr007vjbWjrV1dah164167qFGGSz8h3CjhWSosZjJd00nMmXycFF');
 
@@ -193,7 +194,11 @@ function App() {
 		</Route>
 		
 		<Route path='/profile'>
-			{user ? <Profile user={user}/> : <Redirect to="/login" />}
+			{user ? (
+			<Elements stripe={stripeInit}>
+				<Profile user={user}/>
+			</Elements>) :
+			<Redirect to="/login" />}
 		</Route>
 		
 		<Route exact path='/'>
