@@ -20,6 +20,7 @@ import {loadStripe} from '@stripe/stripe-js';
 import { Elements } from "@stripe/react-stripe-js";
 import {ToastContainer} from 'react-toastify';
 import {toast} from 'react-toastify';
+import {AnimatePresence} from 'framer-motion';
 
 const stripeInit = loadStripe('pk_test_51IHTc9GVr4f6jXHSUkrVLoy2Y1PHmiJImQvQ7WFgGShZ6cYr007vjbWjrV1dah164167qFGGSz8h3CjhWSosZjJd00nMmXycFF');
 
@@ -189,6 +190,8 @@ function App() {
 		
 		<Header setLoading={setLoading} resetApp={resetApp} popularVisible={popularVisible} setSearchResult={setSearchResult} />
 
+	<AnimatePresence>
+	
 		<Route path='/about'>
 			<About/>
 		</Route>
@@ -206,7 +209,9 @@ function App() {
 				<Success />
 			</Route>
 		</Elements>
-		
+	
+	</AnimatePresence>
+	
 		<Route exact path='/'>
 			<>
 			{showResults ?

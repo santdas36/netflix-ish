@@ -3,6 +3,7 @@ import "./Login.css";
 import {auth, provider} from './firebase';
 import {useHistory, useLocation} from 'react-router-dom';
 import {toast} from 'react-toastify';
+import {motion} from 'framer-motion';
 
 function Login() {
 	
@@ -59,7 +60,7 @@ function Login() {
 		
   return (
     <div className="login">
-    	<form onSubmit={handleSubmit}>
+    	<motion.form layout onSubmit={handleSubmit}>
 			<h3>{signup ? 'Sign Up' : 'Login'}</h3>
 			{error && <p className="error">{error}</p>}
 			{signup &&
@@ -79,7 +80,7 @@ function Login() {
 			<button style={signup ? {backgroundColor: '#ec215f'} : {backgroundColor: '#3cb19f'}} disabled={loading}>{loading ? (signup ? 'Signing up...' : 'Logging In...') : (signup ? 'Create Account' : 'Log In')}</button>
 			<button onClick={googleSignIn} className="google">Sign In with Google</button>
 			<p><span>{signup ? 'Already have an account?' : 'New to Netflix?'}{' '}</span><b style={signup ? {color: '#3cb19f'} : {color: '#ec215f'}} onClick={()=>{if(!loading){setSignup(!signup)}}}>Sign Up Now.</b></p>
-		</form>
+		</motion.form>
     </div>
   )
 }
