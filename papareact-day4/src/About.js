@@ -18,6 +18,9 @@ function About() {
 		}
 	}
 	
+	const initAnim ={opacity: 0, y: '1rem'};
+	const animAnim ={opacity: 1, y: 0};
+	
   return (
     <div className="about">
     	<motion.div animate={{opacity: 1, y:0}} initial={{opacity: 0, y: '5rem'}} exit={{opacity: 0, y: '5rem'}} class="about__inner">
