@@ -2,13 +2,11 @@ import React, {useEffect} from "react";
 import "./Profile.css";
 import userIcon from './assets/nfuser.jpg';
 import {auth} from './firebase';
-import {loadStripe} from '@stripe/stripe-js';
-
-const stripe = loadStripe('pk_test_51IHTc9GVr4f6jXHSUkrVLoy2Y1PHmiJImQvQ7WFgGShZ6cYr007vjbWjrV1dah164167qFGGSz8h3CjhWSosZjJd00nMmXycFF');
-console.log(process.env.REACT_APP_STRIPE_PK);
+import {useStripe} from '@stripe/react-stripe-js';
 
 function Profile({user}) {
-		
+	
+	const stripe = useStripe();	
 	const checkout = (priceId) => {
 		fetch(`/api/create-checkout-session?priceId=${priceId}`, {
 			method: "POST",

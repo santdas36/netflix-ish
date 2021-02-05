@@ -14,6 +14,10 @@ import "./App.css";
 import axios from './axios';
 import {auth} from './firebase';
 import requests, { imageLargeBase, imageBase, fetchMovie, fetchTV, fetchSearchString, fetchRecommendedMovies, fetchRecommendedTV, fetchSimilarMovies, fetchSimilarTV } from './api';
+import {loadStripe} from '@stripe/stripe-js';
+
+const stripeInit = loadStripe('pk_test_51IHTc9GVr4f6jXHSUkrVLoy2Y1PHmiJImQvQ7WFgGShZ6cYr007vjbWjrV1dah164167qFGGSz8h3CjhWSosZjJd00nMmXycFF');
+
 
 const listOneInit = {
 	title: "Latest & Trending Movies",
