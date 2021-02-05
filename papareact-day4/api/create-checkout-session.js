@@ -1,6 +1,4 @@
-const stripe = require("stripe")(
-  "sk_test_51IHTc9GVr4f6jXHSSCqRsBFJYgb5MEP2LecVsVqGcO0BLpnBzrvDC0ZLRGO3zI5rB7UfHZvTMFvq3IE6F4buTnAP006BUwZO6E"
-);
+const stripe = require("stripe")(process.env.STRIPE_SK);
 
 export default async (request, response) => {
 	if (request.method !== 'POST') {
