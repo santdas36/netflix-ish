@@ -29,6 +29,7 @@ function Header({ setSearchResult, setLoading, popularVisible, resetApp }) {
   }
 
   const searchQuery = (query) => {
+  	history.push('/');
     axios.get(fetchSearchString(query)).then((response) => {
       if (response.data.total_results < 1) {
         alert("No Results Found");
