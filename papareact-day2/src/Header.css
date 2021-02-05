@@ -43,7 +43,7 @@ font-size: 0.85rem;
 	text-transform: uppercase;
 }
 
-..app__nav li a.active {
+.app__nav li a.active {
 font-weight: 700;
 }
 .app__nav li+li {
