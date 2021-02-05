@@ -71,7 +71,7 @@ list-style-type: none;
 .pack .desc li {
 line-height: 1.5;
 }
-.plan__info {
+.pack__info {
 margin-top: 2rem;
 }
 .pack .price {
