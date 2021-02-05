@@ -190,21 +190,19 @@ function App() {
 			<About/>
 		</Route>
 		
-		<Route path='/success'>
-			<Success/>
-		</Route>
-		
 		<Route path='/login'>
 			{user ? <Redirect to="/profile" /> : <Login/>}
 		</Route>
 		
-		<Route path='/profile'>
-			{user ? (
-			<Elements stripe={stripeInit}>
-				<Profile user={user} setLoading={setLoading} />
-			</Elements>) :
-			<Redirect to="/login" />}
-		</Route>
+		<Elements stripe={stripeInit}>
+			<Route path='/profile'>
+				{user ? <Profile user={user} setLoading={setLoading} /> : <Redirect to="/login" />}
+			</Route>
+			
+			<Route path='/success'>
+				<Success setLoading={setLoading} />
+			</Route>
+		</Elements>
 		
 		<Route exact path='/'>
 			<>
