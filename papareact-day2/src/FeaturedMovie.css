@@ -12,6 +12,7 @@
 
 .app__featuredTitle {
 	font-weight: 900;
+max-width: 840px;
 }
 
 .app__featuredGenres {
