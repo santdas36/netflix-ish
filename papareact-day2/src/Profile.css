@@ -16,7 +16,7 @@ align-items: center;
 display: flex;
 justify-content: space-between;
 align-items: center;
-margin-top: 0;
+margin-top: 3rem;
 width: 100%;
 max-width: 720px;
 }
