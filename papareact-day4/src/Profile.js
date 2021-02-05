@@ -21,7 +21,6 @@ function Profile({user}) {
 			} else {	
 				stripe.redirectToCheckout({
 					sessionId: data.sessionId,
-					customerEmail: user.email,
 				})
 			}
 		}).catch((err) => console.log(err));
