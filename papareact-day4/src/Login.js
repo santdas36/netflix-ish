@@ -19,7 +19,7 @@ function Login() {
 		setLoading(true);
 	    auth.signInWithPopup(provider).then((result) => {
 			setLoading(false);
-		}).catch((error) => setError(error.message));
+		}).catch((error) => {setError(error.message); setLoading(false)});
 	};
 	
 	useEffect(()=> {
