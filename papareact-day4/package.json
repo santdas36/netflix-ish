@@ -6,6 +6,7 @@
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
+    "@stripe/stripe-js": "^1.12.1",
     "axios": "^0.20.0",
     "firebase": "^8.2.3",
     "numeral": "^2.0.6",
@@ -15,7 +16,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-spinners": "^0.9.0",
-    "react-text-truncate": "^0.16.0"
+    "react-text-truncate": "^0.16.0",
+    "stripe": "^8.133.0"
   },
   "scripts": {
     "start": "react-scripts start",
