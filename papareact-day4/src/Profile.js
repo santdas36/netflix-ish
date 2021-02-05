@@ -4,6 +4,7 @@ import userIcon from './assets/nfuser.jpg';
 import {auth, db} from './firebase';
 import {useStripe} from '@stripe/react-stripe-js';
 import firebase from 'firebase';
+import {toast} from 'react-toastify';
 
 function Profile({user, setLoading}) {
 	
@@ -31,7 +32,8 @@ function Profile({user, setLoading}) {
 			console.log(data);
 			if (data.error) {
 				console.log(data.error.message)
-			} else {	
+			} else {
+				toast.info('Redirecting...');
 				stripe.redirectToCheckout({
 					sessionId: data.sessionId,
 				}).then((response) => {console.log(response);setLoading(false);});
@@ -46,6 +48,7 @@ function Profile({user, setLoading}) {
 				subscription: firebase.firestore.FieldValue.delete()
 			});
 			setProcessing(false);
+			toast.info('Your subscription was cancelled!');
 		}).catch((err)=> {console.log(err.message);setProcessing(false);});	
 	}
 

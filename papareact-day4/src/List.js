@@ -8,6 +8,7 @@ import numeral from "numeral";
 import "./List.css";
 import axios from './axios';
 import requests, { imageBase } from './api';
+import {toast} from 'react-toastify';
 
 function List({ setMovieId, setLoading }) {
   const [genres, setGenres] = useState([]);
@@ -28,7 +29,7 @@ useEffect(() => {
 
   const errorOccurred = (error) => {
 	setLoading(false);
-	alert('Something went wrong.');
+	toast.error(`Something went wrong: ${error.message}`);
 	console.log(error.message);
   }
 

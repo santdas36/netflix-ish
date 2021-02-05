@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import "./Login.css";
 import {auth, provider} from './firebase';
 import {useHistory, useLocation} from 'react-router-dom';
+import {toast} from 'react-toastify';
 
 function Login() {
 	
@@ -19,6 +20,7 @@ function Login() {
 		setLoading(true);
 	    auth.signInWithPopup(provider).then((result) => {
 			setLoading(false);
+			toast.success('Yay! You are logged in.');
 		}).catch((error) => {setError(error.message); setLoading(false)});
 	};
 	
@@ -50,6 +52,7 @@ function Login() {
 		} else {
 			auth.signInWithEmailAndPassword(email, password).then(()=> {
 				setLoading(false);
+				toast.success("Yo! You're logged in.");
 			}).catch((error) => {setError(error.message); setLoading(false)});
 		}
 	}

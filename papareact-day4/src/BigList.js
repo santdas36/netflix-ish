@@ -8,6 +8,7 @@ import numeral from "numeral";
 import "./BigList.css";
 import axios from './axios';
 import requests, { imageBase } from './api';
+import {toast} from 'react-toastify';
 
 function BigList({ fetchId, title, setMovieId, setLoading, type, notGradient }) {
   const [thisMovies, setThisMovies] = useState([]);
@@ -24,7 +25,7 @@ function BigList({ fetchId, title, setMovieId, setLoading, type, notGradient }) 
 
   const errorOccurred = (error) => {
 	setLoading(false);
-	alert('Something went wrong.');
+	toast.error(`Something went wrong: ${error.message}`);
 	console.log(error.message);
   }
 

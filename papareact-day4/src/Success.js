@@ -3,6 +3,7 @@ import {auth, db} from './firebase';
 import {useStripe} from '@stripe/react-stripe-js';
 import {useLocation, useHistory} from 'react-router-dom';
 import Loading from './Loading';
+import {toast} from 'react-toastify';
 
 function Success() {
 	
@@ -26,6 +27,7 @@ function Success() {
 				  		}, {merge: true}).then(()=> {
 				  			history.replace('/profile');
 				  			setLoading(false);
+				  			toast.success('Yippie.. Your subscription was successful. Enjoy!');
 				  		});
 				  	} else {
 				  		setError('Invalid credentials');

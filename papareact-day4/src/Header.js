@@ -8,6 +8,7 @@ import NFLogo from './assets/logo.png';
 import UserIcon from './assets/nfuser.jpg';
 import {auth} from './firebase';
 import {useHistory, useLocation, NavLink} from 'react-router-dom';
+import {toast} from 'react-toastify';
 
 function Header({ setSearchResult, setLoading, popularVisible, resetApp }) {
   const [input, setInput] = useState('');
@@ -19,7 +20,7 @@ function Header({ setSearchResult, setLoading, popularVisible, resetApp }) {
 
   const errorOccurred = (error) => {
 	setLoading(false);
-	alert('Something went wrong.');
+	toast.error(`Something went wrong: ${error.message}`);
 	console.log(error.message);
   }
   
@@ -32,7 +33,7 @@ function Header({ setSearchResult, setLoading, popularVisible, resetApp }) {
   	history.push('/');
     axios.get(fetchSearchString(query)).then((response) => {
       if (response.data.total_results < 1) {
-        alert("No Results Found");
+        toast.warning("No Results Found!");
         setLoading(false);
       } else {
         setSearchResult(response.data.results);

@@ -17,6 +17,8 @@ import {auth} from './firebase';
 import requests, { imageLargeBase, imageBase, fetchMovie, fetchTV, fetchSearchString, fetchRecommendedMovies, fetchRecommendedTV, fetchSimilarMovies, fetchSimilarTV } from './api';
 import {loadStripe} from '@stripe/stripe-js';
 import { Elements } from "@stripe/react-stripe-js";
+import {ToastContainer} from 'react-toastify';
+import {toast} from 'react-toastify';
 
 const stripeInit = loadStripe('pk_test_51IHTc9GVr4f6jXHSUkrVLoy2Y1PHmiJImQvQ7WFgGShZ6cYr007vjbWjrV1dah164167qFGGSz8h3CjhWSosZjJd00nMmXycFF');
 
@@ -63,7 +65,7 @@ function App() {
   
   const errorOccurred = (error) => {
 	setLoading(false);
-	alert('Something went wrong.');
+	toast.error(`Error Occurred: ${error.message}`);
 	console.log(error.message);
   }
   
@@ -217,7 +219,7 @@ function App() {
 		</Route>
 		
 		<Footer />
-
+		<ToastContainer position="bottom-right"/>
     </div>
   );
 }
