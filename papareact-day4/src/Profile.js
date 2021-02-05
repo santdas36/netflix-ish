@@ -4,8 +4,8 @@ import userIcon from './assets/nfuser.jpg';
 import {auth} from './firebase';
 import {loadStripe} from '@stripe/stripe-js';
 
-const stripe = loadStripe(process.env.REACT_APP_STRIPE_PK);
-console.log(process.env.STRIPE_PK);
+const stripe = loadStripe('pk_test_51IHTc9GVr4f6jXHSUkrVLoy2Y1PHmiJImQvQ7WFgGShZ6cYr007vjbWjrV1dah164167qFGGSz8h3CjhWSosZjJd00nMmXycFF');
+console.log(process.env.REACT_APP_STRIPE_PK);
 
 function Profile({user}) {
 		
