@@ -76,7 +76,7 @@ function Profile({user, setLoading}) {
 		<button className="signout" onClick={()=> {auth.signOut();toast.info('You are now signed out!');}}>Sign Out</button>
 </div>
 <h3>{activePack ? 'Manage your subscription' : 'Subscribe Now to Start Watching'}</h3>
-<motion.div transition={{staggerChildren: 0.2}} className="packs">
+<motion.div animate={{transition:{staggerChildren: 0.2}}} className="packs">
 {packs.map((pack, index) => (
 	<motion.div initial={{opacity: 0, y: '3rem'}} animate={{opacity: 1, y: 0}} className={pack.priceId === activePack ? 'pack active' : 'pack'}>
 		<h3>{pack.title}</h3>
