@@ -34,7 +34,7 @@ margin-right: auto;
 margin-left: 1.5rem;
 }
 .profile h3 {
-margin: 3rem 0;
+margin: auto 0 3rem 0;
 text-align: center;
 }
 .packs {
@@ -42,6 +42,7 @@ display: flex;
 flex-direction: row wrap;
 gap: 1rem;
 margin: auto;
+margin-top: 0;
 }
 .packs .pack {
 background: white;
