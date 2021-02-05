@@ -19,7 +19,7 @@ useEffect(() => {
       setGenres(response.data.genres);
     }).catch((err) => errorOccurred(err));
     axios.get(requests.fetchPopularMovies).then((response) => {
-      setPopularMovies(response.data.results);
+      setPopularMovies(response.data.results.reverse());
     }).catch((err) => errorOccurred(err));
   }
 
@@ -50,7 +50,7 @@ useEffect(() => {
 			<div class="list__trending">
 				<h4>Top Rated Movies</h4>
 				<div class="list__items">
-					{ popularMovies?.reverse().slice(0, 12).map((movie) => 
+					{ popularMovies?.slice(0, 12).map((movie) => 
 						(<div class="list__item" onClick={() => handleClick(movie)}>
 							<img loading="lazy" onError={(e) => {e.target.onerror = null; e.target.src = defaultImage }} src={`${imageBase}${movie.backdrop_path || movie.poster_path}`} />
 							<div className="list__itemInfo">
