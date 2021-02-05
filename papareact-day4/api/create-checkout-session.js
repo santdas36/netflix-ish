@@ -8,8 +8,8 @@ export default async (request, response) => {
 	const email = request.query.email;
 	try {
 	const session = await stripe.checkout.sessions.create({
-		success_url: 'https://papareact-day4.vercel.app/profile',
-		cancel_url: 'https://papareact-day4.vercel.app/profile',
+		success_url: 'https://papareact-day4.vercel.app/profile?session_id={CHECKOUT_SESSION_ID}',
+		cancel_url: 'https://papareact-day4.vercel.app/profile?cancelled=true',
 		mode: 'subscription',
 		payment_method_types: ['card'],
 		customer_email: email,
