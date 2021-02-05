@@ -22,14 +22,14 @@ function About() {
 	const animAnim ={{opacity: 1, y: 0}};
   return (
     <div className="about">
-    	<motion.div animate={{opacity: 1, y:0, transition: {staggerChildren: 0.1}}} initial={{opacity: 0, y: '5rem'}} exit={{opacity: 0, y: '5rem'}} class="about__inner">
-			<motion.h1 initial={initAnim} animate={animAnim}>Unlimited films, TV shows and more.</motion.h1>
-			<motion.h2 initial={initAnim} animate={animAnim}>What anywhere. Cancel anytime.</motion.h2>
-			<motion.form initial={initAnim} animate={animAnim} onSubmit={handleSubmit} class="subscribe">
+    	<motion.div animate={{opacity: 1, y:0}} initial={{opacity: 0, y: '5rem'}} exit={{opacity: 0, y: '5rem'}} class="about__inner">
+			<motion.h1 initial={initAnim} animate={animAnim} transition={{delay: 0.2}}>Unlimited films, TV shows and more.</motion.h1>
+			<motion.h2 initial={initAnim} animate={animAnim} transition={{delay: 0.25}}>What anywhere. Cancel anytime.</motion.h2>
+			<motion.form transition={{delay: 0.35}} initial={initAnim} animate={animAnim} onSubmit={handleSubmit} class="subscribe">
 				<input type="email" value={email} required onChange={(e)=>setEmail(e.target.value)} placeholder="Enter your email address..."/>
 				<button>Try 30 Days FREE</button>
 			</motion.form>
-			<motion.p initial={initAnim} animate={animAnim}>Ready to watch? Enter your email to create or access your account.</motion.p>
+			<motion.p transition={{delay: 0.5}} initial={initAnim} animate={animAnim}>Ready to watch? Enter your email to create or access your account.</motion.p>
 		</motion.div>
 
     </div>

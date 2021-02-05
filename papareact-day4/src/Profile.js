@@ -76,9 +76,9 @@ function Profile({user, setLoading}) {
 		<button className="signout" onClick={()=> {auth.signOut();toast.info('You are now signed out!');}}>Sign Out</button>
 </div>
 <h3>{activePack ? 'Manage your subscription' : 'Subscribe Now to Start Watching'}</h3>
-<motion.div initial={{opacity: 0.9}} animate={{opacity: 1, transition: {staggerChildren: 0.1}}} className="packs">
-{packs.map((pack) => (
-	<motion.div initial={{opacity: 0, y: '3rem'}} animate={{opacity: 1, y: 0}} className={pack.priceId === activePack ? 'pack active' : 'pack'}>
+<div className="packs">
+{packs.map((pack, index) => (
+	<motion.div initial={{opacity: 0, y: '3rem'}} transition={{delay: 0.1*(index+1)}} animate={{opacity: 1, y: 0}} className={pack.priceId === activePack ? 'pack active' : 'pack'}>
 		<h3>{pack.title}</h3>
 		<ul className="desc">
 		<li>{pack.d1}</li>
@@ -88,7 +88,7 @@ function Profile({user, setLoading}) {
 		<button disabled={pack.priceId === activePack} onClick={(e)=> checkout(pack.priceId)}>{pack.priceId === activePack ? `Renews in ${parseInt((subs.current_period_end - subs.current_period_start)/(24*60*60))} day(s)` : 'Activate Now'}</button>
 	</motion.div>
 ))}
-</motion.div>
+</div>
 <p className="pack__info">All plans come with a 30 days FREE trial period. Cancel anytime.</p>
 {activePack && <button disabled={processing} className="cancel" onClick={cancelSubs}>Cancel Subscription</button>}
     </div>
