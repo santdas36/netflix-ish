@@ -60,7 +60,7 @@ function Login() {
 		
   return (
     <div className="login">
-    	<motion.form layout onSubmit={handleSubmit}>
+    	<motion.form initial={{opacity: 0, y: '5rem'}} exit={{opacity: 0, y: '5rem'}} animate={{opacity: 1, y: 0}} layout onSubmit={handleSubmit}>
 			<h3>{signup ? 'Sign Up' : 'Login'}</h3>
 			{error && <p className="error">{error}</p>}
 			{signup &&

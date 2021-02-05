@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import "./About.css";
 import {auth} from './firebase';
 import {useHistory} from 'react-router-dom';
+import {motion} from 'framer-motion';
 
 function About() {
 	
@@ -19,7 +20,7 @@ function About() {
 	
   return (
     <div className="about">
-    	<div class="about__inner">
+    	<motion.div initial={{opacity: 0, y: '5rem'}} exit={{opacity: 0, y: '5rem'}}  animate={{opacity: 1, y: 0}}class="about__inner">
 			<h1>Unlimited films, TV shows and more.</h1>
 			<h2>What anywhere. Cancel anytime.</h2>
 			<form onSubmit={handleSubmit} class="subscribe">
@@ -27,7 +28,7 @@ function About() {
 				<button>Try 30 Days FREE</button>
 			</form>
 			<p>Ready to watch? Enter your email to create or access your account.</p>
-		</div>
+		</motion.div>
 
     </div>
   )
