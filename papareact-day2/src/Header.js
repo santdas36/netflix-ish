@@ -7,7 +7,7 @@ import requests, { imageBase, fetchMovie, fetchTV, fetchSearchString, setLoading
 import NFLogo from './assets/logo.png';
 import UserIcon from './assets/nfuser.jpg';
 import {auth} from './firebase';
-import {useHistory, useLocation} from 'react-router-dom';
+import {useHistory, useLocation, NavLink} from 'react-router-dom';
 
 function Header({ setSearchResult, setLoading, popularVisible, resetApp }) {
   const [input, setInput] = useState('');
@@ -73,7 +73,8 @@ function Header({ setSearchResult, setLoading, popularVisible, resetApp }) {
 						<button onClick={(e) => handleSearch(e)} type="submit"></button>
 					</form>
 				</li>
-				<li><a href="#">Home</a></li>
+				<li><NavLink to="/" activeClassName="active">Home</NavLink></li>
+				<li><NavLink to="/about" activeClassName="active">About</NavLink></li>
 				<li><a href="#">Movies</a></li>
 				<li><a href="#">Series</a></li>
 				<li><a href="#">Featured</a></li>
