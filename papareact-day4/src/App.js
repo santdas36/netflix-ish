@@ -6,6 +6,7 @@ import List from "./List";
 import BigList from "./BigList";
 import Results from "./Results";
 import Loading from "./Loading";
+import Success from "./Success";
 import Footer from "./Footer";
 import Login from './Login';
 import About from './About';
@@ -187,6 +188,10 @@ function App() {
 
 		<Route path='/about'>
 			<About/>
+		</Route>
+		
+		<Route path='/success'>
+			<Success/>
 		</Route>
 		
 		<Route path='/login'>
