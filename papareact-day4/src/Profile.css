@@ -103,7 +103,7 @@ margin-top: 3rem;
 margin-bottom: auto;
 }
 .pack:hover, .profile button:hover {
-transform: scale(1.05);
+transform: scale(1.05) !important;
 box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.15);
 }
 .packs .pack.active {
