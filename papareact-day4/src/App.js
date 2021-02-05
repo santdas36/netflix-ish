@@ -1,3 +1,4 @@
+import 'react-toastify/dist/ReactToastify.css';
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import FeaturedMovie from "./FeaturedMovie";

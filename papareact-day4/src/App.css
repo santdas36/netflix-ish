@@ -23,3 +23,20 @@
 		background-position: 50% 0% !important;
 	}
 }
+
+
+.Toastify__toast-container {
+width: 400px
+}
+.Toastify__toast {
+border-radius: 0.5rem;
+padding: 1rem;
+box-shadow: 0 0.5rem 1rem -0.5rem rgba(0,0,0,0.5);
+}
+.Toastify__toast--success {
+background: #2c3e50;
+}
+.Toastify__progress-bar {
+opacity: 0.25;
+height: 2px;
+}
