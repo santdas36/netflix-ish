@@ -3,6 +3,7 @@ import "./Profile.css";
 import userIcon from './assets/nfuser.jpg';
 import {auth, db} from './firebase';
 import {useStripe} from '@stripe/react-stripe-js';
+import firebase from 'firebase';
 
 function Profile({user, setLoading}) {
 	
@@ -42,7 +43,7 @@ function Profile({user, setLoading}) {
 		setProcessing(true);
 		fetch(`/api/cancel?subId=${subs.id}`).then(()=> {
 			db.collection('users').doc(user.uid).update({
-				subscription: FieldValue.delete()
+				subscription: firebase.firestore.FieldValue.delete()
 			});
 			setProcessing(false);
 		}).catch((err)=> {console.log(err.message);setProcessing(false);});	
