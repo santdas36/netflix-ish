@@ -1,26 +1,40 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {auth, db} from './firebase';
 import {useStripe} from '@stripe/react-stripe-js';
-import {useLocation} from 'react-router-dom';
+import {useLocation, useHistory} from 'react-router-dom';
+import Loading from './Loading';
 
-function Success({setLoading}) {
+function Success() {
 	
 	const stripe = useStripe();
 	const location = useLocation();
+	const history = useHistory();
+	const [error, setError] = useState('');
+	const [loading, setLoading] = useState(false);
 	
 	useEffect(()=> {
-		setLoading(true);
 		const sessionId = new URLSearchParams(location.search).get('session_id');
-		
-		fetch(`/api/retrieve-session?sessionId=${sessionId}`).then((response)=>response.json()).then((data)=> {
-				console.log(data.subscription.status, data);
-				setLoading(false);
-			}).catch((error)=> console.log(error.message));
+		const unsubscribe = auth.onAuthStateChanged((user) => {
+			if(user && sessionId) {
+				setLoading(true);
+				fetch(`/api/retrieve-session?sessionId=${sessionId}`)
+				  .then((response)=>response.json())
+				  .then((data)=> {
+					db.collection('users').doc(user.uid).set({
+						subscription: data.subscription
+					}, {merge: true}).then(()=> {
+						history.replace('/profile');
+						setLoading(false);
+					});
+				  })		
+				  .catch((error)=> {setError(error.message); setLoading(false);});
+			}
 	}, []);
 	
   return (
     <div className="profile">
-    	Processing...
+    	{loading && <Loading />}
+    	{error ? `Some error occurred (${error})` : 'Processing...'}
     </div>
   )
 }

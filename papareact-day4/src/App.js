@@ -200,7 +200,7 @@ function App() {
 			</Route>
 			
 			<Route path='/success'>
-				<Success setLoading={setLoading} />
+				<Success />
 			</Route>
 		</Elements>
 		
