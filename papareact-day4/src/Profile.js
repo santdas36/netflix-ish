@@ -5,6 +5,7 @@ import {auth, db} from './firebase';
 import {useStripe} from '@stripe/react-stripe-js';
 import firebase from 'firebase';
 import {toast} from 'react-toastify';
+import {motion} from 'framer-motion';
 
 function Profile({user, setLoading}) {
 	
@@ -75,9 +76,9 @@ function Profile({user, setLoading}) {
 		<button className="signout" onClick={()=> {auth.signOut();toast.info('You are now signed out!');}}>Sign Out</button>
 </div>
 <h3>{activePack ? 'Manage your subscription' : 'Subscribe Now to Start Watching'}</h3>
-<div className="packs">
+<motion.div transition={{staggerChildren: 0.1}} className="packs">
 {packs.map((pack) => (
-	<div className={pack.priceId === activePack ? 'pack active' : 'pack'}>
+	<motion.div initial={{opacity: 0, y: '3rem'}} animate={{opacity: 1, y: 0}} className={pack.priceId === activePack ? 'pack active' : 'pack'}>
 		<h3>{pack.title}</h3>
 		<ul className="desc">
 		<li>{pack.d1}</li>
@@ -85,9 +86,9 @@ function Profile({user, setLoading}) {
 		</ul>
 		<p className="price">$ {pack.price}<small>/{pack.duration}</small></p>
 		<button disabled={pack.priceId === activePack} onClick={(e)=> checkout(pack.priceId)}>{pack.priceId === activePack ? `Renews in ${parseInt((subs.current_period_end - subs.current_period_start)/(24*60*60))} day(s)` : 'Activate Now'}</button>
-	</div>
+	</motion.div>
 ))}
-</div>
+</motion.div>
 <p className="pack__info">All plans come with a 30 days FREE trial period. Cancel anytime.</p>
 {activePack && <button disabled={processing} className="cancel" onClick={cancelSubs}>Cancel Subscription</button>}
     </div>
