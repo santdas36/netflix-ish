@@ -7,6 +7,7 @@ import {useStripe} from '@stripe/react-stripe-js';
 function Profile({user, setLoading}) {
 	
 	const [subs, setSubs] = useState({});
+	const [processing, setProcessing] = useState(false);
 	const [activePack, setActivePack] = useState('');
 	const stripe = useStripe();
 	
@@ -15,9 +16,11 @@ function Profile({user, setLoading}) {
 {title: 'Netflix HD', d1: 'Max 5 screens', d2: '1080p HD Streaming', price: '39.99', duration: 'month', priceId: 'price_1IHTs5GVr4f6jXHSID3JNFyr'},
 {title: 'Netflix Premium', d1: 'Unlimited screens', d2: '4K UHD Streaming', price: '499.99', duration: 'year', priceId: 'price_1IHTucGVr4f6jXHSbmX7mkFI'},]
 
-	const checkout = (priceId, e) => {
-		e.preventDefault();
+	const checkout = async (priceId) => {
 		setLoading(true);
+		if (subs.id) {
+			cancelSubs();
+		}
 		fetch(`/api/create-checkout-session?priceId=${priceId}&email=${user.email}`, {
 			method: "POST",
 			headers: {
@@ -36,9 +39,13 @@ function Profile({user, setLoading}) {
 	}
 	
 	const cancelSubs = () => {
-		db.collection('users').doc(user.uid).update({
-			subscription: FieldValue.delete()
-		});
+		setProcessing(true);
+		fetch(`/api/cancel?subId=${subs.id}`).then(()=> {
+			db.collection('users').doc(user.uid).update({
+				subscription: FieldValue.delete()
+			});
+			setProcessing(false);
+		}).catch((err)=> {console.log(err.message);setProcessing(false);});	
 	}
 
 	useEffect(()=> {
@@ -78,7 +85,7 @@ function Profile({user, setLoading}) {
 ))}
 </div>
 <p className="pack__info">All plans come with a 30 days FREE trial period. Cancel anytime.</p>
-{activePack && <button className="cancel" onClick={cancelSubs}>Cancel Subscription</button>}
+{activePack && <button disabled={processing} className="cancel" onClick={cancelSubs}>Cancel Subscription</button>}
     </div>
   )
 }
