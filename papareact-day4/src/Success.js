@@ -11,6 +11,7 @@ function Success({setLoading}) {
 	useEffect(()=> {
 		setLoading(true);
 		const sessionId = new URLSearchParams(location.search).get('session_id');
+		console.log(sessionId);
 		fetch(`/retrieve-session?sessionId=${sessionId}`).then((response)=>response.json()).then((data)=> {console.log(data);setLoading(false);}).catch((error)=> console.log(error.message));
 	}, []);
 	
