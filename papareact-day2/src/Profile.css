@@ -78,12 +78,14 @@ border: 1px rgba(255,255,255,0.15) solid;
 color: #fff;
 transition: all 0.2s;
 }
-.profile button.signout {
+.profile button.signout, button.cancel {
 background: #ec215f;
 padding: 0.6rem 1.5rem;
 }
-
-.pack:hover, .pack button:hover,  button.signout:hover {
+button.cancel {
+margin-top: 3rem;
+}
+.pack:hover, .profile button:hover, {
 transform: scale(1.05);
 box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.15);
 }

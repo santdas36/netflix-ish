@@ -40,6 +40,7 @@ function Profile({user}) {
 	</div>
 </div>
 
+<button className="cancel">Cancel Subscription</button>
     </div>
   )
 }
