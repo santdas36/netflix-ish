@@ -8,8 +8,11 @@ export default async (request, response) => {
 	const email = request.query.email;
 	try {
 		const session = await stripe.checkout.sessions.retrieve(sessionId);
-		console.log(session);
-		return response.status(200).send(session);
+		const subscription = await stripe.subscriptions.retrieve(session.subscription);
+		return response.status(200).json({
+			session: session,
+			subscription: subscription
+		});
 	}
 	catch (e) {
 		return response.status(400).json({
