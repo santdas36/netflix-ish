@@ -34,7 +34,7 @@ padding: 1rem;
 box-shadow: 0 0.5rem 1rem -0.5rem rgba(0,0,0,0.5);
 }
 .Toastify__toast--success {
-background: #2c3e50;
+background: #4ca1af;
 }
 .Toastify__progress-bar {
 opacity: 0.25;
