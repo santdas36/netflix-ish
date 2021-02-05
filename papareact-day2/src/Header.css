@@ -42,6 +42,7 @@ white-space: nowrap;
 
 .app__nav li a {
 	text-transform: uppercase;
+transition: all 0.2s;
 }
 
 .app__nav li a.active {
