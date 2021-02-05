@@ -6,8 +6,15 @@ import {useStripe} from '@stripe/react-stripe-js';
 
 function Profile({user, setLoading}) {
 	
-	const [subs, setSubs] = useState(null);
-	const stripe = useStripe();	
+	const [subs, setSubs] = useState({});
+	const [activePack, setActivePack] = useState('');
+	const stripe = useStripe();
+	
+	const packs = [{title: 'Netflix Mobile', d1: 'Mobile only', d2: '480p SD Streaming', price: '19.99', duration: 'month', priceId: 'price_1IHThZGVr4f6jXHSzK1GUgJd'},
+{title: 'Netflix Lite', d1: 'Two screens', d2: '720p SD Streaming', price: '29.99', duration: 'month', priceId: 'price_1IHTmPGVr4f6jXHSav4jhyQg'},
+{title: 'Netflix HD', d1: 'Max 5 screens', d2: '1080p HD Streaming', price: '39.99', duration: 'month', priceId: 'price_1IHTs5GVr4f6jXHSID3JNFyr'},
+{title: 'Netflix Premium', d1: 'Unlimited screens', d2: '4K UHD Streaming', price: '499.99', duration: 'year', priceId: 'price_1IHTucGVr4f6jXHSbmX7mkFI'},]
+
 	const checkout = (priceId, e) => {
 		e.preventDefault();
 		setLoading(true);
@@ -27,11 +34,26 @@ function Profile({user, setLoading}) {
 			}
 		}).catch((error) => console.log(error.message));
 	}
+	
+	const cancelSubs = () => {
+		db.collection('users').doc(user.uid).update({
+			subscription: FieldValue.delete()
+		});
+	}
 
 	useEffect(()=> {
-		db.collection('users').doc(user.uid).get().then((data)=> {
-			setSubs(data.data().subscription);
+		const unsubscribe = db.collection('users').doc(user.uid).onSnapshot(data)=> {
+			const subAvailable = data.data().subscription;
+			if (subAvailable) {
+				setSubs(subAvailable);
+				setActivePack(subAvailable.plan.id);
+			} else {
+				setSubs({});
+				setActivePack('');
+			}
 		});
+		
+		return unsubscribe;
 	}, []);
 	
   return (
@@ -43,45 +65,20 @@ function Profile({user, setLoading}) {
 </div>
 <h3>Manage your subscription</h3>
 <div className="packs">
-	<div className="pack">
-		<h3>Netflix Mobile</h3>
+{packs.map((pack) => (
+	<div className={pack.priceId === activePack ? 'pack active' : 'pack'}>
+		<h3>{pack.title}</h3>
 		<ul className="desc">
-		<li>Mobile only</li>
-		<li>480p SD Streaming</li>
+		<li>{pack.d1}</li>
+		<li>{pack.d2}</li>
 		</ul>
-		<p className="price">$ 19.99<small>/month</small></p>
-		<button onClick={(e)=> checkout('price_1IHThZGVr4f6jXHSzK1GUgJd', e)}>Activate Now</button>
+		<p className="price">$ {pack.price}<small>/{pack.duration}</small></p>
+		<button disabled={pack.priceId === activePack} onClick={(e)=> checkout(pack.priceId)}>{pack.priceId === activePack ? 'Renews in' : 'Activate Now'}</button>
 	</div>
-	<div className="pack">
-		<h3>Netflix Lite</h3>
-		<ul className="desc">
-		<li>Two screens</li>
-		<li>480p SD Streaming</li>
-		</ul>
-		<p className="price">$ 29.99<small>/month</small></p>
-		<button onClick={(e)=> checkout('price_1IHTmPGVr4f6jXHSav4jhyQg', e)}>Activate Now</button>
-	</div>
-	<div className="pack active">
-		<h3>Netflix HD</h3>
-		<ul className="desc">
-		<li>Max 5 screens</li>
-		<li>1080p HD Streaming</li>
-		</ul>
-		<p className="price">$ 39.99<small>/month</small></p>
-		<button onClick={(e)=> checkout('price_1IHTs5GVr4f6jXHSID3JNFyr', e)}>Renews in 12 days</button>
-	</div>
-	<div className="pack">
-		<h3>Netflix Premium</h3>
-		<ul className="desc">
-		<li>Unlimited screens</li>
-		<li>4K UHD Streaming</li>
-		</ul>
-		<p className="price">$ 499.99<small>/year</small></p>
-		<button onClick={(e)=> checkout('price_1IHTucGVr4f6jXHSbmX7mkFI', e)}>Activate Now</button>
-	</div>
+))}
 </div>
 <p className="pack__info">All plans come with a 30 days FREE trial period. Cancel anytime.</p>
-<button className="cancel">Cancel Subscription</button>
+{activePack && <button className="cancel" onClick={cancelSubs}>Cancel Subscription</button>}
     </div>
   )
 }
