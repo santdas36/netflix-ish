@@ -1,0 +1,11 @@
+.loading {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+}
