@@ -20,14 +20,20 @@ function Success() {
 				fetch(`/api/retrieve-session?sessionId=${sessionId}`)
 				  .then((response)=>response.json())
 				  .then((data)=> {
-					db.collection('users').doc(user.uid).set({
-						subscription: data.subscription
-					}, {merge: true}).then(()=> {
-						history.replace('/profile');
-						setLoading(false);
-					});
-				  })		
+				  	if (data.session.customer_email === user.email) {
+				  		db.collection('users').doc(user.uid).set({
+				  			subscription: data.subscription
+				  		}, {merge: true}).then(()=> {
+				  			history.replace('/profile');
+				  			setLoading(false);
+				  		});
+				  	} else {
+				  		setError('Invalid credentials');
+				  	}
+				  })
 				  .catch((error)=> {setError(error.message); setLoading(false);});
+			} else {
+				setError('You are not logged in!');
 			}
 	}, []);
 	
