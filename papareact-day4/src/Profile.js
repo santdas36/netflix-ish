@@ -34,6 +34,7 @@ function Profile({user, setLoading}) {
 			if (data.error) {
 				console.log(data.error.message)
 			} else {
+				analytics.logEvent(`started_subscription`);
 				toast.info('Redirecting...');
 				stripe.redirectToCheckout({
 					sessionId: data.sessionId,
@@ -49,6 +50,7 @@ function Profile({user, setLoading}) {
 				subscription: firebase.firestore.FieldValue.delete()
 			});
 			setProcessing(false);
+			analytics.logEvent('unsubscribed');
 			toast.info('Your subscription was cancelled!');
 		}).catch((err)=> {console.log(err.message);setProcessing(false);});	
 	}

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./Login.css";
-import {auth, provider} from './firebase';
+import {auth, provider, analytics} from './firebase';
 import {useHistory, useLocation} from 'react-router-dom';
 import {toast} from 'react-toastify';
 import {motion} from 'framer-motion';
@@ -49,11 +49,13 @@ function Login() {
               		displayName: name,
               		photoURL: `https://avatars.dicebear.com/4.5/api/gridy/${email}.svg`,
             	});
+              analytics.logEvent('signed_up');
             }).catch((error) => {setError(error.message); setLoading(false)});
 		} else {
 			auth.signInWithEmailAndPassword(email, password).then(()=> {
 				setLoading(false);
 				toast.success("Yo! You're logged in.");
+				analytics.logEvent('logged_in');
 			}).catch((error) => {setError(error.message); setLoading(false)});
 		}
 	}

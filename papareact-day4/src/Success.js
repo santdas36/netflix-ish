@@ -29,6 +29,7 @@ function Success() {
 				  			setLoading(false);
 				  			toast.success('Yippie.. Your subscription was successful. Enjoy!');
 				  		});
+				  		analytics.logEvent(`subscribed_${data.subscription.plan.amount}`);
 				  	} else {
 				  		setError('Invalid credentials');
 				  	}
