@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./Profile.css";
 import userIcon from './assets/nfuser.jpg';
-import {auth, db} from './firebase';
+import {auth, db, analytics} from './firebase';
 import {useStripe} from '@stripe/react-stripe-js';
 import firebase from 'firebase';
 import {toast} from 'react-toastify';

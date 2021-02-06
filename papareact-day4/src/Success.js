@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {auth, db} from './firebase';
+import {auth, db, analytics} from './firebase';
 import {useStripe} from '@stripe/react-stripe-js';
 import {useLocation, useHistory} from 'react-router-dom';
 import Loading from './Loading';
