@@ -24,6 +24,7 @@
 	overflow-y: scroll;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
 }
 
 .list__items::-webkit-scrollbar {
@@ -35,6 +36,7 @@
 	flex: 0 0 300px;
 	height: 200px;
 	background: #fff;
+    scroll-snap-align: start;
 	border-radius: 1rem;
 	overflow: hidden;
 	position: relative;
