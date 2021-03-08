@@ -143,6 +143,7 @@ margin: 3rem 0 2rem 0;
 .packs .pack {
 min-width: 240px;
 max-width: 100%;
+flex: 1;
 }
 .profile__header img {
 display: none
