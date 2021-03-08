@@ -93,7 +93,7 @@ font-weight: 700;
 	display: none;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 750px) {
     .app__title {
       display: none;
     }

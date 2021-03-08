@@ -151,5 +151,10 @@ display: none
 font-size: 1.3rem;
 margin-left: 0;
 }
+.profile button.signout {
+padding: 0.25rem 0.5rem;
+font-size: 0.85rem;
+white-space: nowrap;
+}
 }
 
