@@ -121,8 +121,8 @@ form p b:hover {
 text-decoration: underline !important;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 550px) {
 .login, .login form {
-padding: 1.5rem;
+padding: 3rem 1.5rem;
 }
 }
