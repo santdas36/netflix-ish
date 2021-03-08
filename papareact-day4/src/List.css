@@ -37,6 +37,7 @@
 	height: 200px;
 	background: #fff;
     scroll-snap-align: start;
+    scroll-padding: 10px;
 	border-radius: 1rem;
 	overflow: hidden;
 	position: relative;
