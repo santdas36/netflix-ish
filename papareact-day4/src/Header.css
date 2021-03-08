@@ -94,6 +94,14 @@ font-weight: 700;
 }
 
 @media (max-width: 550px) {
+    .app__title {
+      display: none;
+    }
+
+    .app__user {
+      margin-right: 0;
+    }
+
 	.app__header {
 		padding: 2rem 1.5rem;
 		overflow: hidden;
