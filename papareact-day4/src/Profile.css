@@ -135,11 +135,11 @@ padding: 0 1.5rem 3rem 1.5rem;
 .profile {
 padding-top: 6rem;
 }
+}
+@media (max-width: 750px) {
 .profile h3 {
 margin: 3rem 0 2rem 0;
 }
-}
-@media (max-width: 750px) {
 .packs .pack {
 min-width: 240px;
 max-width: 100%;
