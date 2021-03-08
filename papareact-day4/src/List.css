@@ -22,6 +22,7 @@
 	margin-left: -10px;
 	margin-top: -10px;
 	overflow-y: scroll;
+    scroll-padding-left: 10px;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
     scroll-snap-type: x mandatory;
@@ -37,7 +38,6 @@
 	height: 200px;
 	background: #fff;
     scroll-snap-align: start;
-    scroll-padding: 10px;
 	border-radius: 1rem;
 	overflow: hidden;
 	position: relative;
