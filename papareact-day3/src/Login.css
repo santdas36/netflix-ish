@@ -119,5 +119,6 @@ transition: all 0.2s;
 }
 form p b:hover {
 text-decoration: underline !important;
+cursor: pointer;
 }
 
